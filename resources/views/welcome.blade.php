@@ -12,10 +12,36 @@
             justify-content: center;
             align-items: center;
             background: linear-gradient(45deg, #45a247, #283c86);
+            background-size: 150%; 
+            animation: pulse 3s infinite;
             height: 100vh;
             margin: 0;
             overflow: auto;
         }
+        @keyframes pulse {
+            0% {
+                background-size: 100%; 
+            }
+            75% {
+                background-size: 200%; 
+            }
+            100% {
+                background-size: 100%; 
+            }
+        }
+
+        @keyframes pulseB {
+            0% {
+                background-size: 100%; 
+            }
+            75% {
+                background-size: 330%; 
+            }
+            100% {
+                background-size: 100%; 
+            }
+        }
+
 
         .splash-screen {
             display: flex;
@@ -42,6 +68,8 @@
         }
 
         .login-container {
+            margin-top: 30%;
+            margin-bottom: 30%;
             background: #0F2027;
             background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
             background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
@@ -49,10 +77,12 @@
             border-radius: 12px;
             box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
             width: 100%;
-            max-width: 450px;
+            max-width: 350px;
+            max-height: 350px;
             display: none;
             opacity: 0;
             transform: translateY(20px);
+            animation: pulseB 5s infinite; /* Llama a la animación de expansión y contracción */
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
@@ -82,7 +112,7 @@
 
         }
 
-        .form-control:focus {
+        .form-control:hover {
             background-position: left top;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }
@@ -161,6 +191,27 @@
                 width: 20%;
             }
         }
+
+        .message a {
+            color: #DCE35B; 
+            font-size: 0.6rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s ease, transform 0.3s ease; 
+        }
+
+        .message a:hover {
+            color: #4CAF50; 
+            transform: scale(1.05);
+            text-shadow: 0px 0px 18px #283c86;
+        }
+
+        .message {
+            margin: 15px 0 0;
+            color: #b3b3b3; 
+            text-align: center;
+            font-size: 12px;
+        }
     </style>
 </head>
 
@@ -178,7 +229,7 @@
         </div>
         @endif
 
-        <form method="POST" action="{{ url('/public/views/homepage') }}">
+        <form method="POST" action="{{ url('/views/homepage') }}">
             @csrf
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
@@ -189,6 +240,9 @@
                 <input type="password" id="password" name="password" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            <p class="message">             <a href="#">Registrarme</a></p>
+            <p class="message">             <a href="#">Recuperar Contraseña</a></p>
+            
         </form>
     </div>
 
