@@ -12,37 +12,10 @@
             justify-content: center;
             align-items: center;
             background: linear-gradient(45deg, #45a247, #283c86);
-            background-size: 150%; 
             animation: pulse 3s infinite;
             height: 100vh;
             margin: 0;
-            overflow: auto;
         }
-        @keyframes pulse {
-            0% {
-                background-size: 100%; 
-            }
-            75% {
-                background-size: 200%; 
-            }
-            100% {
-                background-size: 100%; 
-            }
-        }
-
-        @keyframes pulseB {
-            0% {
-                background-size: 100%; 
-            }
-            75% {
-                background-size: 330%; 
-            }
-            100% {
-                background-size: 100%; 
-            }
-        }
-
-
         .splash-screen {
             display: flex;
             justify-content: center;
@@ -56,7 +29,6 @@
             z-index: 9999;
             animation: fadeOut 3s forwards;
         }
-
         @keyframes fadeOut {
             0% {
                 opacity: 1;
@@ -66,24 +38,110 @@
                 opacity: 0;
             }
         }
+        @keyframes pulse {
+            0% { background-size: 100%; }
+            75% { background-size: 200%; }
+            100% { background-size: 100%; }
+        }
 
-        .login-container {
-            margin-top: 30%;
-            margin-bottom: 30%;
-            background: #0F2027;
-            background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
-            background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+        @keyframes pulseB {
+            0% { background-size: 100%; }
+            75% { background-size: 200%; }
+            100% { background-size: 100%; }
+        }
+
+        .container {
+            position: relative;
             width: 100%;
-            max-width: 350px;
-            max-height: 350px;
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: pulseB 5s infinite; /* Llama a la animación de expansión y contracción */
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            max-width: 400px;
+            background: #0F2027;
+            background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+            animation: pulseB 5s infinite; 
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                margin-top: 20%;
+                padding: 25px;
+                max-width: 380px;
+            }
+
+            .splash-screen {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 20%;
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            .splash-screen {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                margin-top: 40%;
+                padding: 15px;
+                max-width: 90%;
+            }
+
+            .splash-screen {
+                font-size: 1.6rem;
+            }
+
+            .logo-image {
+                width: 20%;
+            }
+        }
+        @media (max-width: 376px) {
+            .container {
+                margin-top: 60%;
+                padding: 15px;
+                max-width: 90%;
+            }
+
+            .splash-screen {
+                font-size: 1.6rem;
+            }
+
+            .logo-image {
+                width: 20%;
+            }
+        }
+        @media (max-width: 176px) {
+            .container {
+                margin-top: 90%;
+                padding: 15px;
+                max-width: 90%;
+            }
+
+            .splash-screen {
+                font-size: 1.6rem;
+            }
+
+            .logo-image {
+                width: 20%;
+            }
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         .form-label {
@@ -96,8 +154,6 @@
             color: #fff;
             transform: scale(0.98);
         }
-
-
         .form-control {
             background: #00416A;
             background: -webkit-linear-gradient(to top, #E4E5E6, #00416A);
@@ -111,12 +167,10 @@
             transition: background-position 0.8s ease, box-shadow 0.4s ease;
 
         }
-
         .form-control:hover {
             background-position: left top;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }
-
         .btn-primary {
             width: 100%;
             background: #0f0c29;
@@ -136,62 +190,6 @@
             transform: scale(1.1);
 
         }
-        .error-message {
-            color: red;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .logo-image {
-            width: 15%;
-            height: auto;
-            margin-bottom: 30px;
-        }
-
-        @media (max-width: 1200px) {
-            .login-container {
-                padding: 30px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .login-container {
-                padding: 25px;
-                max-width: 380px;
-            }
-
-            .splash-screen {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .login-container {
-                padding: 20px;
-                max-width: 90%;
-            }
-
-            .splash-screen {
-                font-size: 1.8rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .login-container {
-                padding: 15px;
-                max-width: 90%;
-            }
-
-            .splash-screen {
-                font-size: 1.6rem;
-            }
-
-            .logo-image {
-                width: 20%;
-            }
-        }
-
         .message a {
             color: #DCE35B; 
             font-size: 0.6rem;
@@ -212,50 +210,82 @@
             text-align: center;
             font-size: 12px;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
+
     <div class="splash-screen" id="splashScreen">
         <img src="https://i.ibb.co/RSVNY3J/logo-2.png" alt="logo-2" class="logo-image">
     </div>
-
-    <div class="login-container" id="loginContainer">
-        <h1 class="text-center text-white mb-4">Inicia Sesión</h1>
-
-        @if (session('error'))
-        <div class="error-message">
-            {{ session('error') }}
+    <div class="container">
+        <div id="loginForm">
+            <h2>Inicia Sesión</h2>
+            <form method="POST" action="/login">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña:</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                <p class="message">¿No tienes una cuenta? <a href="#" onclick="toggleForms()">Regístrate aquí</a></p>
+            </form>
         </div>
-        @endif
 
-        <form method="POST" action="{{ url('/views/homepage') }}">
-            @csrf
-            <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" id="email" name="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Contraseña:</label>
-                <input type="password" id="password" name="password" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-            <p class="message">             <a href="#">Registrarme</a></p>
-            <p class="message">             <a href="#">Recuperar Contraseña</a></p>
-            
-        </form>
+        <div id="registerForm" class="hidden">
+            <h2>Registrarse</h2>
+            <form method="POST" action="/register">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">Nombre:</label>
+                    <input type="text" id="firstName" name="firstName" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Apellido:</label>
+                    <input type="text" id="lastName" name="lastName" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="registerEmail" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña:</label>
+                    <input type="password" id="registerPassword" name="password" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+                <p class="message">¿Ya tienes una cuenta? <a href="#" onclick="toggleForms()">Inicia Sesión</a></p>
+            </form>
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
-        setTimeout(function() {
-            document.getElementById('splashScreen').style.display = 'none';
-            const loginContainer = document.getElementById('loginContainer');
-            loginContainer.style.display = 'block';
-            loginContainer.style.opacity = 1;
-            loginContainer.style.transform = 'translateY(0)';
-        }, 3000);
+        window.addEventListener('load', () => {
+            const splashScreen = document.getElementById('splashScreen');
+            setTimeout(() => {
+                splashScreen.style.display = 'none';
+            }, 3000); 
+        });
+
+        function toggleForms() {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            if (loginForm.classList.contains('hidden')) {
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+            } else {
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+            }
+        }
     </script>
 </body>
 
