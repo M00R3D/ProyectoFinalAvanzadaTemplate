@@ -290,6 +290,7 @@
                     <div class="mb-3">
                         <label for="especialidad" class="form-label">Especialidad:</label>
                         <input type="text" id="especialidad" name="especialidad" class="form-control" required>
+                        <p class="message">¿Ya tienes una cuenta? <a href="#" onclick="showLoginForm()">Inicia Sesión</a></p>
                     </div>
                 </form>
             </div>
@@ -308,6 +309,7 @@
                     <div class="mb-3">
                         <label for="estado_salud" class="form-label">Estado de Salud:</label>
                         <textarea id="estado_salud" name="estado_salud" class="form-control" rows="4" required></textarea>
+                        <p class="message">¿Ya tienes una cuenta? <a href="#" onclick="showLoginForm()">Inicia Sesión</a></p>
                     </div>
                 </form>
             </div>
@@ -316,7 +318,6 @@
             
     </div>
     <script>
-        // Función para manejar el splash screen
         window.addEventListener('load', () => {
             const splashScreen = document.getElementById('splashScreen');
             setTimeout(() => {
@@ -324,18 +325,17 @@
             }, 3000);
         });
 
-        // Función para alternar entre formularios
         function showLoginForm() {
             document.getElementById('loginForm').classList.remove('hidden');
             document.getElementById('registerForm').classList.add('hidden');
+            document.getElementById('registerPatientForm').classList.add('hidden');
+            document.getElementById('registerCareForm').classList.add('hidden');
         }
 
         function toggleRoleForm() {
             const role = document.getElementById('role').value;
-            // Ocultar el formulario principal
             document.getElementById('loginForm').classList.add('hidden');
             document.getElementById('registerForm').classList.add('hidden');
-            // Mostrar el formulario específico según el rol
             if (role === 'paciente') {
                 document.getElementById('registerPatientForm').classList.remove('hidden');
                 document.getElementById('registerCareForm').classList.add('hidden');
@@ -344,8 +344,6 @@
                 document.getElementById('registerPatientForm').classList.add('hidden');
             }
         }
-
-        // Función para regresar al formulario de registro principal
         function showRegisterForm() {
             document.getElementById('loginForm').classList.add('hidden');
             document.getElementById('registerForm').classList.remove('hidden');
