@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            display: flex;
+            display: center;
             justify-content: center;
             align-items: center;
             background: linear-gradient(45deg, #45a247, #283c86);
@@ -50,17 +50,28 @@
             100% { background-size: 100%; }
         }
 
+        
+
+        .center-panel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
         .container {
             position: relative;
             width: 100%;
             max-width: 400px;
-            background: #0F2027;
             background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-            animation: pulseB 5s infinite; 
+            animation: pulseB 5s infinite;
         }
+
 
         @media (max-width: 1200px) {
             .container {
@@ -234,13 +245,13 @@
                     <input type="password" id="password" name="password" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                <p class="message">¿No tienes una cuenta? <a href="#" onclick="toggleForms()">Regístrate aquí</a></p>
+                <p class="message">¿No tienes una cuenta? <a href="#" onclick="showRegisterForm()">Regístrate aquí</a></p>
             </form>
         </div>
 
         <div id="registerForm" class="hidden">
             <h2>Registrarse</h2>
-            <form method="POST" action="/register">
+            <form action="toggleRoleForm()">
                 <div class="mb-3">
                     <label for="firstName" class="form-label">Nombre:</label>
                     <input type="text" id="firstName" name="firstName" class="form-control" required>
@@ -254,6 +265,13 @@
                     <input type="email" id="registerEmail" name="email" class="form-control" required>
                 </div>
                 <div class="mb-3">
+                    <label for="role" class="form-label">Rol:</label>
+                    <select id="role" name="role" class="form-control" required>
+                        <option value="cuidador">Cuidador</option>
+                        <option value="paciente">Paciente</option>
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="password" class="form-label">Contraseña:</label>
                     <input type="password" id="registerPassword" name="password" class="form-control" required>
                 </div>
@@ -261,30 +279,78 @@
                     <label for="confirmPassword" class="form-label">Confirmar Contraseña:</label>
                     <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Registrarse</button>
-                <p class="message">¿Ya tienes una cuenta? <a href="#" onclick="toggleForms()">Inicia Sesión</a></p>
+                <button type="button" class="btn btn-primary" onclick="toggleRoleForm()">Continuar</button>
+                <p class="message">¿Ya tienes una cuenta? <a href="#" onclick="showLoginForm()">Inicia Sesión</a></p>
             </form>
         </div>
-    </div>
+        
+            <div id="registerCareForm" class="hidden">
+                <h2>Registrarse</h2>
+                <form action="">
+                    <div class="mb-3">
+                        <label for="especialidad" class="form-label">Especialidad:</label>
+                        <input type="text" id="especialidad" name="especialidad" class="form-control" required>
+                    </div>
+                </form>
+            </div>
 
+            <div id="registerPatientForm" class="hidden">
+                <h2>Registrarse</h2>
+                <form action="">
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección:</label>
+                        <input type="text" id="direccion" name="direccion" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="estado_salud" class="form-label">Estado de Salud:</label>
+                        <textarea id="estado_salud" name="estado_salud" class="form-control" rows="4" required></textarea>
+                    </div>
+                </form>
+            </div>
+            
+            
+            
+    </div>
     <script>
+        // Función para manejar el splash screen
         window.addEventListener('load', () => {
             const splashScreen = document.getElementById('splashScreen');
             setTimeout(() => {
                 splashScreen.style.display = 'none';
-            }, 3000); 
+            }, 3000);
         });
 
-        function toggleForms() {
-            const loginForm = document.getElementById('loginForm');
-            const registerForm = document.getElementById('registerForm');
-            if (loginForm.classList.contains('hidden')) {
-                loginForm.classList.remove('hidden');
-                registerForm.classList.add('hidden');
-            } else {
-                loginForm.classList.add('hidden');
-                registerForm.classList.remove('hidden');
+        // Función para alternar entre formularios
+        function showLoginForm() {
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('registerForm').classList.add('hidden');
+        }
+
+        function toggleRoleForm() {
+            const role = document.getElementById('role').value;
+            // Ocultar el formulario principal
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('registerForm').classList.add('hidden');
+            // Mostrar el formulario específico según el rol
+            if (role === 'paciente') {
+                document.getElementById('registerPatientForm').classList.remove('hidden');
+                document.getElementById('registerCareForm').classList.add('hidden');
+            } else if (role === 'cuidador') {
+                document.getElementById('registerCareForm').classList.remove('hidden');
+                document.getElementById('registerPatientForm').classList.add('hidden');
             }
+        }
+
+        // Función para regresar al formulario de registro principal
+        function showRegisterForm() {
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('registerForm').classList.remove('hidden');
+            document.getElementById('registerPatientForm').classList.add('hidden');
+            document.getElementById('registerCareForm').classList.add('hidden');
         }
     </script>
 </body>
