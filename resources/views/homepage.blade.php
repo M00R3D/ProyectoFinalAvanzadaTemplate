@@ -117,44 +117,8 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-custom">
-        <div class="navbar-container container-fluid">
-            <a class="navbar-brand logo" href="#">
-                <img src="https://i.ibb.co/RSVNY3J/logo-2.png" alt="Logo">
-            </a>
-            <form class="d-flex search-bar">
-                <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-light" type="submit">Buscar</button>
-            </form>
-            <span class="navbar-text me-3">Bienvenido, Job Moore</span>
-            <div class="dropdown">
-            <button class="btn  dropdown-toggle btn-with-icon btn-dropdown1" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../iconflecha.png" alt="Logo" height="40">
-            </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
-</div>
-
-<div class="dropdown mt-3">
-        <button class="btn  dropdown-toggle btn-with-icon btn-dropdown1" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../iconconf.png" alt="Logo" height="40">
-        </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
-</div>
-
-            <!-- Botón de logout -->
-            <button class="btn  btn-with-icon btn-logout" type="submit">
-                <img src="../iconlogout.png" alt="Logo" height="40">
-            </button>
-        </div>
-    </nav>
+    
+    <iframe src="navbar.blade.php" width="100%" height="100%" frameborder="0"></iframe>
     <h1>Bienvenido a la página psicodélica</h1>
     <p>¡Explora el contenido y diviértete!</p>
     <div class="row" id="pnl-links" style=""><div class="col-lg-6">      <div class="panel panel-default">
