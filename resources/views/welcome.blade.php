@@ -235,7 +235,7 @@
     <div class="container">
         <div id="loginForm">
             <h2>Inicia Sesión</h2>
-            <form method="POST" action="/login">
+            <form method="POST" action="../../../resources/views/homepage.blade.php">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
                     <input type="email" id="email" name="email" class="form-control" required>
@@ -285,7 +285,7 @@
         </div>
         
             <div id="registerCareForm" class="hidden">
-                <h2>Registrarse</h2>
+                <h2>Completar informacion de cuidador/a</h2>
                 <form action="">
                     <div class="mb-3">
                         <label for="especialidad" class="form-label">Especialidad:</label>
@@ -296,7 +296,7 @@
             </div>
 
             <div id="registerPatientForm" class="hidden">
-                <h2>Registrarse</h2>
+                <h2>Completar informacion de paciente</h2>
                 <form action="">
                     <div class="mb-3">
                         <label for="direccion" class="form-label">Dirección:</label>
@@ -351,6 +351,15 @@
             document.getElementById('registerCareForm').classList.add('hidden');
         }
     </script>
-</body>
+
+
+
+
+
+
+
 
 </html>
+
+
+
