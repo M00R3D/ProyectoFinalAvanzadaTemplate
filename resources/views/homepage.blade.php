@@ -91,6 +91,11 @@
         .navbar-frame{
             width: 100%;
         }
+        .btn-historial{
+            margin-top: 30px;
+            width:20%;
+            /* padding: 20%; */
+        }
     </style>
 </head>
 <body>
@@ -121,45 +126,94 @@
             
         </aside>
         <main class="content col-md-9">
-            <h1>DashBoard</h1>
-            <p>¡Explora el contenido y diviértete!</p>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="panel">
-                        <div class="panel-heading">Set the alarm for the specified time</div>
-                        <div class="panel-body">
-                        <a href="/set-alarm-for-4-00-am/" class="btn btn-space btn-primary" title="Set Alarm for 4 AM">4:00 AM</a>
-                        <a href="/set-alarm-for-4-30-am/" class="btn btn-space btn-primary" title="Set Alarm for 4:30 AM">4:30 AM</a>
-                        <br>
-                        <a href="/set-alarm-for-5-00-am/" class="btn btn-space btn-primary" title="Set Alarm for 5 AM">5:00 AM</a>
-                        <a href="/set-alarm-for-5-15-am/" class="btn btn-space btn-primary" title="Set Alarm for 5:15 AM">5:15 AM</a>
-                        <a href="/set-alarm-for-5-30-am/" class="btn btn-space btn-primary" title="Set Alarm for 5:30 AM">5:30 AM</a>
-                        <a href="/set-alarm-for-5-45-am/" class="btn btn-space btn-primary" title="Set Alarm for 5:45 AM">5:45 AM</a>
-                        <br>
-                        <a href="/set-alarm-for-6-00-am/" class="btn btn-space btn-primary" title="Set Alarm for 6 AM">6:00 AM</a>
-                        <a href="/set-alarm-for-6-15-am/" class="btn btn-space btn-primary" title="Set Alarm for 6:15 AM">6:15 AM</a>
-                        <a href="/set-alarm-for-6-30-am/" class="btn btn-space btn-primary" title="Set Alarm for 6:30 AM">6:30 AM</a>
-                        <a href="/set-alarm-for-6-45-am/" class="btn btn-space btn-primary" title="Set Alarm for 6:45 AM">6:45 AM</a>
-                        <br>
-                        <a href="/set-alarm-for-7-00-am/" class="btn btn-space btn-primary" title="Set Alarm for 7 AM">7:00 AM</a>
-                        <a href="/set-alarm-for-7-15-am/" class="btn btn-space btn-primary" title="Set Alarm for 7:15 AM">7:15 AM</a>
-                        <a href="/set-alarm-for-7-30-am/" class="btn btn-space btn-primary" title="Set Alarm for 7:30 AM">7:30 AM</a>
-                        <a href="/set-alarm-for-7-45-am/" class="btn btn-space btn-primary" title="Set Alarm for 7:45 AM">7:45 AM</a>
-                        <br>
-                        <a href="/set-alarm-for-8-00-am/" class="btn btn-space btn-primary" title="Set Alarm for 8 AM">8:00 AM</a>
-                        <a href="/set-alarm-for-8-15-am/" class="btn btn-space btn-primary" title="Set Alarm for 8:15 AM">8:15 AM</a>
-                        <a href="/set-alarm-for-8-30-am/" class="btn btn-space btn-primary" title="Set Alarm for 8:30 AM">8:30 AM</a>
-                        <a href="/set-alarm-for-8-45-am/" class="btn btn-space btn-primary" title="Set Alarm for 8:45 AM">8:45 AM</a>
-                        <br>
-                        <a href="/set-alarm-for-9-00-am/" class="btn btn-space btn-primary" title="Set Alarm for 9 AM">9:00 AM</a>
-                        <a href="/set-alarm-for-10-00-am/" class="btn btn-space btn-primary" title="Set Alarm for 10 AM">10:00 AM</a>
-                        <a href="/set-alarm-for-11-00-am/" class="btn btn-space btn-primary" title="Set Alarm for 11 AM">11:00 AM</a>
-                        <a href="/set-alarm-for-12-00-pm/" class="btn btn-space btn-primary" title="Set Alarm for 12 PM">12:00 PM</a>
-                        <a href="/set-alarm-for-1-00-pm/" class="btn btn-space btn-primary" title="Set Alarm for 1 PM">1:00 PM</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <h1>Dashboard</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+
+            <table class="table table-striped table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Alarma</th>
+                        <th>Hora de la Alarma</th>
+                        <th>Paciente y Medicina</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="/set-alarm-for-4-00-am/" class="btn btn-primary btn-sm">Alarma 4:00 AM</a></td>
+                        <td>4:00 AM</td>
+                        <td>Juan Pérez - Paracetamol</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/set-alarm-for-5-00-am/" class="btn btn-primary btn-sm">Alarma 5:00 AM</a></td>
+                        <td>5:00 AM</td>
+                        <td>María López - Ibuprofeno</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/set-alarm-for-6-00-am/" class="btn btn-primary btn-sm">Alarma 6:00 AM</a></td>
+                        <td>6:00 AM</td>
+                        <td>Carlos Sánchez - Amoxicilina</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/set-alarm-for-7-30-am/" class="btn btn-primary btn-sm">Alarma 7:30 AM</a></td>
+                        <td>7:30 AM</td>
+                        <td>Ana García - Omeprazol</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/set-alarm-for-8-00-am/" class="btn btn-primary btn-sm">Alarma 8:00 AM</a></td>
+                        <td>8:00 AM</td>
+                        <td>Pedro Gómez - Insulina</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/set-alarm-for-8-45-am/" class="btn btn-primary btn-sm">Alarma 8:45 AM</a></td>
+                        <td>8:45 AM</td>
+                        <td>Laura Ruiz - Loratadina</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/set-alarm-for-9-00-am/" class="btn btn-primary btn-sm">Alarma 9:00 AM</a></td>
+                        <td>9:00 AM</td>
+                        <td>Ricardo Díaz - Metformina</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/set-alarm-for-10-30-am/" class="btn btn-primary btn-sm">Alarma 10:30 AM</a></td>
+                        <td>10:30 AM</td>
+                        <td>Sofía Fernández - Salbutamol</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/set-alarm-for-11-00-am/" class="btn btn-primary btn-sm">Alarma 11:00 AM</a></td>
+                        <td>11:00 AM</td>
+                        <td>Diego Martínez - Aspirina</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/set-alarm-for-12-00-pm/" class="btn btn-primary btn-sm">Alarma 12:00 PM</a></td>
+                        <td>12:00 PM</td>
+                        <td>Gabriela Torres - Antibiótico</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/set-alarm-for-1-00-pm/" class="btn btn-primary btn-sm">Alarma 1:00 PM</a></td>
+                        <td>1:00 PM</td>
+                        <td>Daniela Hernández - Vitamina C</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/set-alarm-for-2-30-pm/" class="btn btn-primary btn-sm">Alarma 2:30 PM</a></td>
+                        <td>2:30 PM</td>
+                        <td>José Castillo - Antihistamínico</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <!-- finalizacion del scroll panel del Dashboard -->
+
+
+        <td><a href="/set-alarm-for-10-30-am/" class="btn btn-warning btn-sm btn-historial">Ver todo el Historial</a></td>
+
+    </div>
+</div>
+
         </main>
     </div>
 
