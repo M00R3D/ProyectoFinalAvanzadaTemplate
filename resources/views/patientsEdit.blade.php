@@ -152,41 +152,52 @@
             
         </aside>
         <main class="content col-md-9">
-        <h1>Dashboard</h1>
+            <h1>Editar Perfil del Paciente</h1>
 
-<div class="container">
-    <div class="row">
-<div class="col-lg-12 table-right">
-        <h1>Perfil del Paciente</h1>
-            <div class="card">
-                <div class="card-header">
-                    Información de Juan Pérez
-                </div>
-                <div class="card-body">
-                    <p><strong>Nombre:</strong> Juan</p>
-                    <p><strong>Apellido:</strong> Pérez</p>
-                    <p><strong>Email:</strong> juan.perez@example.com</p>
-                    <p><strong>Dirección:</strong> Calle Ficticia 123, Ciudad, País</p>
-                    <p><strong>Teléfono:</strong> +123 456 7890</p>
-                    <p><strong>Estado de Salud:</strong> Estable</p>
-                    <p><strong>Contraseña:</strong> ********</p>
-                    <a class="btn btn-warning btn-edit" href="../../../resources/views/patientsEdit.blade.php" class="btn btn-primary" role="button">
-                        EDITAR PACIENTE
-                    </a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 table-right">
+                        <div class="card">
+                            <div class="card-header">
+                                Editar Información de Juan Pérez
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="nombre" class="form-label"><strong>Nombre</strong></label>
+                                        <input type="text" class="form-control" id="nombre" value="Juan">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="apellido" class="form-label"><strong>Apellido</strong></label>
+                                        <input type="text" class="form-control" id="apellido" value="Pérez">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label"><strong>Email</strong></label>
+                                        <input type="email" class="form-control" id="email" value="juan.perez@example.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="direccion" class="form-label"><strong>Dirección</strong></label>
+                                        <input type="text" class="form-control" id="direccion" value="Calle Ficticia 123, Ciudad, País">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="telefono" class="form-label"><strong>Teléfono</strong></label>
+                                        <input type="tel" class="form-control" id="telefono" value="+123 456 7890">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="estadoSalud" class="form-label"><strong>Estado de Salud</strong></label>
+                                        <input type="text" class="form-control" id="estadoSalud" value="Estable">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="contrasena" class="form-label"><strong>Contraseña</strong></label>
+                                        <input type="password" class="form-control" id="contrasena" value="********">
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-edit">Guardar Cambios</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </main>
-    </div>
-
-            </div>
-        </div>
-<!-- finalizacion del scroll panel del Dashboard -->
-</div>
-
-
-    </div>
-</div>
-
         </main>
     </div>
 
