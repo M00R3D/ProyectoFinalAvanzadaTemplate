@@ -142,10 +142,9 @@
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
         </div>
-
-        <button class="btn btn-with-icon btn-logout" type="submit">
+        <a class="navbar-brand logo" href="../../../resources/views/welcome.blade.php" target="_top">
             <img src="../iconlogout.png" alt="Logo" height="40">
-        </button>
+        </a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 

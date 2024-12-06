@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Cuidados Especiales</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -28,12 +28,9 @@
 
         .sidebar {
             background-color: #2c3e50;
-            /* padding-right: 20px; */
             padding: 15px;
             height: 100%;
-            /* margin-right: 20px; */
             width: 10%;
-
         }
 
         .sidebar .btn {
@@ -49,6 +46,8 @@
         .content {
             padding: 20px;
             background: linear-gradient(45deg, #45a247, #283c86);
+            flex-grow: 1;
+            width: 100%;
         }
 
         .panel {
@@ -62,8 +61,8 @@
             margin-bottom: 10px;
         }
 
-        .btn-space {
-            margin: 5px;
+        .form-control, .btn {
+            margin: 5px 0;
         }
 
         @media (max-width: 768px) {
@@ -79,37 +78,24 @@
             }
         }
 
-        @media (max-width: 576px) {
-            .navbar-brand img {
-                max-height: 30px;
-            }
-
-            .content h1 {
-                font-size: 24px;
-            }
-        }
         .navbar-frame{
             width: 100%;
         }
-        .btn-historial{
-            margin-top: 30px;
-            width:20%;
-        }
-        .table-right {
-            margin-top: 20px;
-            background-color: #34495e;
-            padding: 15px;
-            border-radius: 8px;
+
+        .sidebar {
+            padding-right: 0;
         }
     </style>
 </head>
 <body>
-    <div class ="navbar-frame">
+
+    <div class="navbar-frame">
         <iframe src="navbar.blade.php" width="100%" height="100%" frameborder="0"></iframe>
     </div>
+
     <div class="container-fluid d-flex">
         <aside class="sidebar col-md-3">
-            <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
+        <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
                 <img src="../iconhome.png" alt="Logo" height="40">
             </a>
             <a href="../../../resources/views/special.blade.php" class="btn btn-primary" role="button">
@@ -127,56 +113,38 @@
             <a href="../../../resources/views/medicines.blade.php" class="btn btn-primary" role="button">
                 <img src="../iconpill.png" alt="Logo" height="40">
             </a>
-            
-            
         </aside>
         <main class="content col-md-9">
-        <h1>Dashboard</h1>
+            <h1>Agregar Cuidados Especiales</h1>
+            <div class="panel">
+                <form action="#" method="POST">
+                    <div class="mb-3">
+                        <label for="patientName" class="form-label">Nombre del Paciente</label>
+                        <input type="text" class="form-control" id="patientName" placeholder="Ingresa el nombre del paciente" required>
+                    </div>
 
-<div class="container">
-    <div class="row">
-<div class="col-lg-12 table-right">
-                <h5>Pacientes y Medicinas</h5>
-                <table class="table table-striped table-hover">
-                    <thead class="table-primary">
-                        <tr>
-                            <th>Paciente</th>
-                            <th>Acción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Juan Pérez</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
-                        <tr>
-                            <td>María López</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
-                        <tr>
-                            <td>Carlos Sánchez</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
-                        <tr>
-                            <td>Ana García</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
-                        <tr>
-                            <td>Pedro Gómez</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <div class="mb-3">
+                        <label for="careDetails" class="form-label">Detalles del Cuidado Especial</label>
+                        <textarea class="form-control" id="careDetails" rows="4" placeholder="Descripción del cuidado especial" required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="careDate" class="form-label">Fecha de Aplicación</label>
+                        <input type="date" class="form-control" id="careDate" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="priority" class="form-label">Prioridad</label>
+                        <select class="form-control" id="priority">
+                            <option value="alta">Alta</option>
+                            <option value="media">Media</option>
+                            <option value="baja">Baja</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Guardar Cuidados Especiales</button>
+                </form>
             </div>
-        </div>
-<!-- finalizacion del scroll panel del Dashboard -->
-</div>
-
-        <td><a href="/set-alarm-for-10-30-am/" class="btn btn-warning btn-sm btn-historial">Ver todo el Historial</a></td>
-
-    </div>
-</div>
-
         </main>
     </div>
 

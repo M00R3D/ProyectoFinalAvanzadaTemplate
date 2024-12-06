@@ -109,7 +109,7 @@
     </div>
     <div class="container-fluid d-flex">
         <aside class="sidebar col-md-3">
-            <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
+        <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
                 <img src="../iconhome.png" alt="Logo" height="40">
             </a>
             <a href="../../../resources/views/special.blade.php" class="btn btn-primary" role="button">
@@ -131,55 +131,57 @@
             
         </aside>
         <main class="content col-md-9">
-        <h1>Dashboard</h1>
+            
+        <section class="info-section">
+        <h1>Acerca de Med Record</h1>
+        <p>
+            La necesidad de una <span class="highlight">gestión eficiente en el cuidado de la salud</span> es crucial, especialmente para las personas que deben tomar medicamentos regularmente y monitorear su estado de salud de manera constante. 
+            Actualmente, muchos pacientes y cuidadores utilizan métodos manuales o herramientas desactualizadas, lo que conlleva a una administración ineficiente y, en algunos casos, a la pérdida de información crítica.
+        </p>
+        <p>
+            <strong>Med Record</strong> es una solución web y móvil desarrollada en <strong>React Native</strong>, diseñada para eliminar estos problemas. Esta aplicación ayuda tanto a los pacientes como a los cuidadores, optimizando el proceso de monitoreo de la salud, el historial de medicamentos y el manejo de emergencias menores.
+        </p>
 
-<div class="container">
-    <div class="row">
-<div class="col-lg-12 table-right">
-                <h5>Pacientes y Medicinas</h5>
-                <table class="table table-striped table-hover">
-                    <thead class="table-primary">
-                        <tr>
-                            <th>Paciente</th>
-                            <th>Acción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Juan Pérez</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
-                        <tr>
-                            <td>María López</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
-                        <tr>
-                            <td>Carlos Sánchez</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
-                        <tr>
-                            <td>Ana García</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
-                        <tr>
-                            <td>Pedro Gómez</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <h2>Funcionalidades clave</h2>
+        <h3>Perfiles</h3>
+        <h4>Cuidador</h4>
+        <ul>
+            <li>Dashboard con pendientes y tareas del cuidador.</li>
+            <li>Gestión de pacientes.</li>
+            <li>Historial y administración de medicamentos.</li>
+            <li>Botones de ayuda, regreso y recursos informativos sobre condiciones médicas comunes y manejo de emergencias menores.</li>
+        </ul>
+        <h4>Paciente</h4>
+        <ul>
+            <li>Dashboard personalizado con información del paciente.</li>
+            <li>Botón para reportar malestares al cuidador.</li>
+            <li>Opción para actualizar síntomas y diagnósticos.</li>
+        </ul>
+
+        <h3>Otras características</h3>
+        <ul>
+            <li>Gestión de múltiples pacientes con perfiles personalizados.</li>
+            <li>Acceso claro a información crítica como síntomas, diagnóstico y medicamentos necesarios.</li>
+        </ul>
+
+        <div class="mission">
+            <h3>Misión</h3>
+            <p>
+                “Proveer una plataforma intuitiva y accesible que facilite la gestión eficiente del cuidado de la salud, permitiendo a pacientes y cuidadores monitorear medicamentos, síntomas y diagnósticos de manera clara. Ayudamos a mejorar la calidad de vida de las personas al ofrecer herramientas personalizadas para el control y seguimiento de su bienestar.”
+            </p>
         </div>
-<!-- finalizacion del scroll panel del Dashboard -->
-</div>
 
-        <td><a href="/set-alarm-for-10-30-am/" class="btn btn-warning btn-sm btn-historial">Ver todo el Historial</a></td>
-
-    </div>
-</div>
-
-        </main>
-    </div>
-
+        <div class="vision">
+            <h3>Visión</h3>
+            <p>
+                “Ser la plataforma líder en la gestión de salud personalizada, transformando la manera en que pacientes y cuidadores interactúan con su bienestar, proporcionando soluciones tecnológicas innovadoras que mejoren la calidad de vida y promuevan un cuidado más efectivo y accesible en todo el mundo.”
+            </p>
+        </div>
+        </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+
+
 </body>
 </html>

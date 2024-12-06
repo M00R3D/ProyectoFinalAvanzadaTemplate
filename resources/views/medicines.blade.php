@@ -109,25 +109,24 @@
     </div>
     <div class="container-fluid d-flex">
         <aside class="sidebar col-md-3">
-            <button class="btn" >
+        <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
                 <img src="../iconhome.png" alt="Logo" height="40">
-            </button>
-            <button class="btn">
+            </a>
+            <a href="../../../resources/views/special.blade.php" class="btn btn-primary" role="button">
                 <img src="../iconCare.png" alt="Logo" height="40">
-            </button>
-            <button class="btn">
+            </a>
+            <a href="../../../resources/views/hist.blade.php" class="btn btn-primary" role="button">
                 <img src="../iconhist.png" alt="Logo" height="40">
-            </button>
-            <button class="btn">
+            </a>
+            <a href="../../../resources/views/patients.blade.php" class="btn btn-primary" role="button">
                 <img src="../iconPatients.png" alt="Logo" height="40">
-            </button>
-            <button class="btn">
-                    <img src="../iconhelp.png" alt="Logo" height="40">
-            </button>
-            <button class="btn">
-                    <img src="../iconpill.png" alt="Logo" height="40">
-            </button>
-            
+            </a>
+            <a href="../../../resources/views/infopage.blade.php" class="btn btn-primary" role="button">
+                <img src="../iconhelp.png" alt="Logo" height="40">
+            </a>
+            <a href="../../../resources/views/medicines.blade.php" class="btn btn-primary" role="button">
+                <img src="../iconpill.png" alt="Logo" height="40">
+            </a>
             
         </aside>
         <main class="content col-md-9">
