@@ -124,7 +124,7 @@
             <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
                 <img src="../iconhelp.png" alt="Logo" height="40">
             </a>
-            <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
+            <a href="../../../resources/views/medicines.blade.php" class="btn btn-primary" role="button">
                 <img src="../iconpill.png" alt="Logo" height="40">
             </a>
             
