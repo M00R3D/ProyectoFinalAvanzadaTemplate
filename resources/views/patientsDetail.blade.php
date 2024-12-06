@@ -101,6 +101,27 @@
             padding: 15px;
             border-radius: 8px;
         }
+        .card {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: #34495e;
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .card-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .card-body {
+            font-size: 1.1rem;
+        }
+
+        .btn-edit {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -136,52 +157,25 @@
 <div class="container">
     <div class="row">
 <div class="col-lg-12 table-right">
-                <h5>Pacientes y Medicinas</h5>
-                <table class="table table-striped table-hover">
-                    <thead class="table-primary">
-                        <tr>
-                            <th>Paciente</th>
-                            <th>Acción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Juan Pérez</td>
-                            <td>
-                                <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-primary" role="button">
-                                    <img src="../iconPatients.png" alt="Logo" height="40">
-                                </a>
-                            </td>                         </tr>
-                        <tr>
-                            <td>María López</td>
-                            <td>
-                                <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-primary" role="button">
-                                    <img src="../iconPatients.png" alt="Logo" height="40">
-                                </a>
-                            </td>                         </tr>
-                        <tr>
-                            <td>Carlos Sánchez</td>
-                            <td>
-                                <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-primary" role="button">
-                                    <img src="../iconPatients.png" alt="Logo" height="40">
-                                </a>
-                            </td>                         </tr>
-                        <tr>
-                            <td>Ana García</td>
-                            <td>
-                                <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-primary" role="button">
-                                    <img src="../iconPatients.png" alt="Logo" height="40">
-                                </a>
-                            </td>                         </tr>
-                        <tr>
-                            <td>Pedro Gómez</td>
-                            <td>
-                                <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-primary" role="button">
-                                    <img src="../iconPatients.png" alt="Logo" height="40">
-                                </a>
-                            </td>                         </tr>
-                    </tbody>
-                </table>
+        <h1>Perfil del Paciente</h1>
+            <div class="card">
+                <div class="card-header">
+                    Información de Juan Pérez
+                </div>
+                <div class="card-body">
+                    <p><strong>Nombre:</strong> Juan</p>
+                    <p><strong>Apellido:</strong> Pérez</p>
+                    <p><strong>Email:</strong> juan.perez@example.com</p>
+                    <p><strong>Dirección:</strong> Calle Ficticia 123, Ciudad, País</p>
+                    <p><strong>Teléfono:</strong> +123 456 7890</p>
+                    <p><strong>Estado de Salud:</strong> Estable</p>
+                    <p><strong>Contraseña:</strong> ********</p>
+                    <button class="btn btn-warning btn-edit">Editar Información</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
             </div>
         </div>
 <!-- finalizacion del scroll panel del Dashboard -->

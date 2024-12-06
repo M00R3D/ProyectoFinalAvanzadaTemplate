@@ -225,24 +225,40 @@
                     <tbody>
                         <tr>
                             <td>Juan Pérez</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
+                            <td>
+                                <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-primary" role="button">
+                                    <img src="../iconPatients.png" alt="Logo" height="40">
+                                </a>
+                            </td>                        </tr>
                         <tr>
                             <td>María López</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
+                            <td>
+                                <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-primary" role="button">
+                                    <img src="../iconPatients.png" alt="Logo" height="40">
+                                </a>
+                            </td>                        </tr>
                         <tr>
                             <td>Carlos Sánchez</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
+                            <td>
+                                <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-primary" role="button">
+                                    <img src="../iconPatients.png" alt="Logo" height="40">
+                                </a>
+                            </td>
                         </tr>
                         <tr>
                             <td>Ana García</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
+                            <td>
+                                <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-primary" role="button">
+                                    <img src="../iconPatients.png" alt="Logo" height="40">
+                                </a>
+                            </td>                        </tr>
                         <tr>
                             <td>Pedro Gómez</td>
-                            <td><button class="btn btn-info btn-sm"><img src="../iconPatients.png" alt="Paciente" height="20"></button></td>
-                        </tr>
+                            <td>
+                                <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-primary" role="button">
+                                    <img src="../iconPatients.png" alt="Logo" height="40">
+                                </a>
+                            </td>                        </tr>
                     </tbody>
                 </table>
             </div>
