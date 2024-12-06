@@ -28,12 +28,9 @@
 
         .sidebar {
             background-color: #2c3e50;
-            /* padding-right: 20px; */
             padding: 15px;
             height: 100%;
-            /* margin-right: 20px; */
             width: 10%;
-
         }
 
         .sidebar .btn {
@@ -88,18 +85,43 @@
                 font-size: 24px;
             }
         }
+
         .navbar-frame{
             width: 100%;
         }
+
         .btn-historial{
             margin-top: 30px;
             width:20%;
         }
+
         .table-right {
             margin-top: 20px;
             background-color: #34495e;
             padding: 15px;
             border-radius: 8px;
+        }
+
+        .card {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: #34495e;
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .card-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .card-body {
+            font-size: 1.1rem;
+        }
+
+        .btn-edit {
+            width: 100%;
         }
     </style>
 </head>
@@ -109,7 +131,7 @@
     </div>
     <div class="container-fluid d-flex">
         <aside class="sidebar col-md-3">
-        <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
+            <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
                 <img src="../iconhome.png" alt="Logo" height="40">
             </a>
             <a href="../../../resources/views/special.blade.php" class="btn btn-primary" role="button">
@@ -127,69 +149,36 @@
             <a href="../../../resources/views/medicines.blade.php" class="btn btn-primary" role="button">
                 <img src="../iconpill.png" alt="Logo" height="40">
             </a>
-            
         </aside>
+
         <main class="content col-md-9">
-            
-        <div class="container">
-        <h1 class="mt-4">Medicinas</h1>
-        <div class="col-lg-12 table-right">
-            <h5>Lista de Medicinas</h5>
-            <table class="table table-striped table-hover">
-                <thead class="table-primary">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Cantidad en Stock</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody id="medicinas-table">
-                </tbody>
-            </table>
-        </div>
+            <h1>Dashboard</h1>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 table-right">
+                        <h1>Información de Medicamento</h1>
+                        <div class="card">
+                            <div class="card-header">
+                                Nombre del Medicamento: Paracetamol
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Descripción:</strong> Analgésico utilizado para aliviar dolores leves a moderados.</p>
+                                <p><strong>Stock Disponible:</strong> 150 unidades</p>
+                                <p><strong>Dosis Recomendada:</strong> 500mg cada 8 horas</p>
+                                <p><strong>Frecuencia Recomendada:</strong> Cada 8 horas</p>
+                                <a class="btn btn-warning btn-edit" href="../../../resources/views/medicinesEdit.blade.php" role="button">
+                                    EDITAR MEDICAMENTO
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script >
-        // Lista de medicinas aleatorias
-        const medicinas = [
-            { nombre: "Paracetamol", stock: 20 },
-            { nombre: "Ibuprofeno", stock: 15 },
-            { nombre: "Omeprazol", stock: 25 },
-            { nombre: "Amoxicilina", stock: 10 },
-            { nombre: "Metformina", stock: 30 },
-        ];
-        const medicinasTable = document.getElementById('medicinas-table');
-
-        // Función para renderizar la tabla
-        function renderMedicinas() {
-            medicinasTable.innerHTML = ''; // Limpiar tabla
-            medicinas.forEach((medicina, index) => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${medicina.nombre}</td>
-                    <td>${medicina.stock} unidades</td>
-                    <td>
-                        <button class="btn btn-delete btn-sm" onclick="borrarMedicina(${index})">Borrar</button>
-                        <a href="../../../resources/views/medicinesDetail.blade.php" class="btn btn-primary" role="button">
-                            <img src="../iconpill.png" alt="Logo" height="40">
-                        </a>                    
-                    </td>
-                `;
-                medicinasTable.appendChild(row);
-            });
-        }
-
-        // Función para borrar una medicina
-        function borrarMedicina(index) {
-            medicinas.splice(index, 1); // Eliminar medicina de la lista
-            renderMedicinas(); // Volver a renderizar
-        }
-
-        // Renderizar medicinas al cargar la página
-        renderMedicinas();
-    </script>
-
-
 </body>
 </html>
