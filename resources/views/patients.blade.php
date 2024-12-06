@@ -105,28 +105,28 @@
 </head>
 <body>
     <div class ="navbar-frame">
-        <iframe src="navbar.blade.php" width="100%" height="100%" frameborder="0" ></iframe>
+        <iframe src="navbar.blade.php" width="100%" height="100%" frameborder="0"></iframe>
     </div>
     <div class="container-fluid d-flex">
         <aside class="sidebar col-md-3">
-            <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
+            <button class="btn" >
                 <img src="../iconhome.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
+            </button>
+            <button class="btn">
                 <img src="../iconCare.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
+            </button>
+            <button class="btn">
                 <img src="../iconhist.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/patients.blade.php" class="btn btn-primary" role="button">
+            </button>
+            <button class="btn">
                 <img src="../iconPatients.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconhelp.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconpill.png" alt="Logo" height="40">
-            </a>
+            </button>
+            <button class="btn">
+                    <img src="../iconhelp.png" alt="Logo" height="40">
+            </button>
+            <button class="btn">
+                    <img src="../iconpill.png" alt="Logo" height="40">
+            </button>
             
             
         </aside>
@@ -135,85 +135,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-8">
-            <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
-
-            <table class="table table-striped table-hover">
-                <thead class="table-primary">
-                    <tr>
-                        <th>Alarma</th>
-                        <th>Hora de la Alarma</th>
-                        <th>Paciente y Medicina</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="/set-alarm-for-4-00-am/" class="btn btn-primary btn-sm">Alarma 4:00 AM</a></td>
-                        <td>4:00 AM</td>
-                        <td>Juan Pérez - Paracetamol</td>
-                    </tr>
-                    <tr>
-                        <td><a href="/set-alarm-for-5-00-am/" class="btn btn-primary btn-sm">Alarma 5:00 AM</a></td>
-                        <td>5:00 AM</td>
-                        <td>María López - Ibuprofeno</td>
-                    </tr>
-                    <tr>
-                        <td><a href="/set-alarm-for-6-00-am/" class="btn btn-primary btn-sm">Alarma 6:00 AM</a></td>
-                        <td>6:00 AM</td>
-                        <td>Carlos Sánchez - Amoxicilina</td>
-                    </tr>
-                    <tr>
-                        <td><a href="/set-alarm-for-7-30-am/" class="btn btn-primary btn-sm">Alarma 7:30 AM</a></td>
-                        <td>7:30 AM</td>
-                        <td>Ana García - Omeprazol</td>
-                    </tr>
-                    <tr>
-                        <td><a href="/set-alarm-for-8-00-am/" class="btn btn-primary btn-sm">Alarma 8:00 AM</a></td>
-                        <td>8:00 AM</td>
-                        <td>Pedro Gómez - Insulina</td>
-                    </tr>
-                    <tr>
-                        <td><a href="/set-alarm-for-8-45-am/" class="btn btn-primary btn-sm">Alarma 8:45 AM</a></td>
-                        <td>8:45 AM</td>
-                        <td>Laura Ruiz - Loratadina</td>
-                    </tr>
-                    <tr>
-                        <td><a href="/set-alarm-for-9-00-am/" class="btn btn-primary btn-sm">Alarma 9:00 AM</a></td>
-                        <td>9:00 AM</td>
-                        <td>Ricardo Díaz - Metformina</td>
-                    </tr>
-                    <tr>
-                        <td><a href="/set-alarm-for-10-30-am/" class="btn btn-primary btn-sm">Alarma 10:30 AM</a></td>
-                        <td>10:30 AM</td>
-                        <td>Sofía Fernández - Salbutamol</td>
-                    </tr>
-                    <tr>
-                        <td><a href="/set-alarm-for-11-00-am/" class="btn btn-primary btn-sm">Alarma 11:00 AM</a></td>
-                        <td>11:00 AM</td>
-                        <td>Diego Martínez - Aspirina</td>
-                    </tr>
-                    <tr>
-                        <td><a href="/set-alarm-for-12-00-pm/" class="btn btn-primary btn-sm">Alarma 12:00 PM</a></td>
-                        <td>12:00 PM</td>
-                        <td>Gabriela Torres - Antibiótico</td>
-                    </tr>
-                    <tr>
-                        <td><a href="/set-alarm-for-1-00-pm/" class="btn btn-primary btn-sm">Alarma 1:00 PM</a></td>
-                        <td>1:00 PM</td>
-                        <td>Daniela Hernández - Vitamina C</td>
-                    </tr>
-                    <tr>
-                        <td><a href="/set-alarm-for-2-30-pm/" class="btn btn-primary btn-sm">Alarma 2:30 PM</a></td>
-                        <td>2:30 PM</td>
-                        <td>José Castillo - Antihistamínico</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    
-
-<div class="col-lg-4 table-right">
+<div class="col-lg-12 table-right">
                 <h5>Pacientes y Medicinas</h5>
                 <table class="table table-striped table-hover">
                     <thead class="table-primary">

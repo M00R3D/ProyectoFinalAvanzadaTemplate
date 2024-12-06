@@ -113,7 +113,7 @@
     </style>
 <nav class="navbar navbar-custom">
     <div class="navbar-container container-fluid">
-        <a class="navbar-brand logo" href="#">
+        <a class="navbar-brand logo" href="../../../resources/views/homepage.blade.php" target="_top">
             <img src="https://i.ibb.co/RSVNY3J/logo-2.png" alt="Logo">
         </a>
         <form class="d-flex search-bar">
