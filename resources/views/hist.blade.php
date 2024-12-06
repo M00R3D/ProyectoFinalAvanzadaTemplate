@@ -165,6 +165,7 @@
                                     <td>Amoxicilina</td>
                                     <td><span class="badge bg-success">Tomado</span></td>
                                     <td>6:00 AM</td>
+                                    
                                 </tr>
                                 <tr>
                                     <td>Omeprazol</td>
@@ -192,24 +193,40 @@
                             <tbody>
                                 <tr>
                                     <td>Juan Pérez</td>
-                                    <td><button class="btn btn-warning btn-sm">Ver detalles</button></td>
-                                </tr>
+                                    <td>
+                                        <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-warning" role="button">
+                                            ver informacion
+                                        </a>
+                                    </td>                                </tr>
                                 <tr>
                                     <td>María López</td>
-                                    <td><button class="btn btn-warning btn-sm">Ver detalles</button></td>
-                                </tr>
+                                    <td>
+                                        <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-warning" role="button">
+                                            ver informacion
+                                        </a>
+                                    </td>                                </tr>
                                 <tr>
                                     <td>Carlos Sánchez</td>
-                                    <td><button class="btn btn-warning btn-sm">Ver detalles</button></td>
-                                </tr>
+                                    <td>
+                                        <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-warning" role="button">
+                                            ver informacion
+                                        </a>
+                                    </td>                                </tr>
                                 <tr>
                                     <td>Ana García</td>
-                                    <td><button class="btn btn-warning btn-sm">Ver detalles</button></td>
+                                    <td>
+                                        <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-warning" role="button">
+                                            ver informacion
+                                        </a>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Pedro Gómez</td>
-                                    <td><button class="btn btn-warning btn-sm">Ver detalles</button></td>
-                                </tr>
+                                    <td>
+                                        <a href="../../../resources/views/patientsDetail.blade.php" class="btn btn-warning" role="button">
+                                            ver informacion
+                                        </a>
+                                    </td>                                </tr>
                             </tbody>
                         </table>
                     </div>
