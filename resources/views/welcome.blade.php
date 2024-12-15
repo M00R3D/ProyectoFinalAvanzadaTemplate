@@ -235,7 +235,7 @@
     <div class="container">
         <div id="loginForm">
             <h2>Inicia Sesión</h2>
-            <form method="POST" action="../../../resources/views/homepage.blade.php">
+            <form method="get" action="{{ route('homepage') }}">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
                     <input type="email" id="email" name="email" class="form-control" required>

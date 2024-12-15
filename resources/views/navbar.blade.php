@@ -123,7 +123,7 @@
         <span class="navbar-text me-3">Bienvenido, Job Moore</span>
         <div class="dropdown">
             <button class="btn dropdown-toggle btn-with-icon btn-dropdown1" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../iconflecha.png" alt="Logo" height="40">
+                <img src="{{ asset('images/iconflecha.png')}}" alt="Logo" height="40">
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -134,7 +134,7 @@
 
         <div class="dropdown mt-3">
             <button class="btn dropdown-toggle btn-with-icon btn-dropdown1" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../iconconf.png" alt="Logo" height="40">
+                <img src="{{ asset('images/iconconf.png')}}" alt="Logo" height="40">
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -142,8 +142,8 @@
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
         </div>
-        <a class="navbar-brand logo" href="../../../resources/views/welcome.blade.php" target="_top">
-            <img src="../iconlogout.png" alt="Logo" height="40">
+        <a class="navbar-brand logo" href="{{ route('welcome') }}" target="_top">
+            <img src="{{ asset('images/iconlogout.png')}}" alt="Logo" height="40">
         </a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
