@@ -120,9 +120,9 @@
 <body>
     
     <div class="container-fluid d-flex">
-        <aside class="sidebar col-md-3">
+        <!-- <aside class="sidebar col-md-3"> -->
         @include('sidebar')
-        </aside>
+        <!-- </aside> -->
         <main class="content col-md-9">
         <h1>Dashboard</h1>
 
