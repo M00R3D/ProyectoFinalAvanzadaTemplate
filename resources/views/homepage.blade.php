@@ -33,22 +33,13 @@
             max-height: 40px;
         }
 
-        .container-fluid {
-            height: 100%;
-            display: flex;
-            flex-wrap: nowrap; /* Evita que las columnas se superpongan */
-        }
-
-        
         .sidebar {
-            flex-shrink: 0; /* Impide que la barra lateral se reduzca */
+            background-color: #2c3e50;
+            padding: 15px;
+            height: 100%;
+            width: 10%;
         }
 
-        .content {
-            flex-grow: 1; /* Permite que el contenido tome el espacio restante */
-            overflow-y: auto; /* Habilita scroll si hay demasiado contenido */
-            padding: 20px;
-        }
         .sidebar .btn {
             width: 100%;
             background-color: #34495e;
@@ -101,24 +92,29 @@
                 font-size: 24px;
             }
         }
+        
         .navbar-frame{
             width: 100%;
         }
+
         .btn-historial{
             margin-top: 30px;
             width:20%;
         }
+
         .table-right {
             margin-top: 20px;
             background-color: #34495e;
             padding: 15px;
             border-radius: 8px;
         }
-        .dropdown-menu {
-    position: fixed !important;
-    z-index: 1050; /* Asegúrate de que sea mayor que el contenido principal */
-}
 
+        .table-left {
+            margin-top: 20px;
+            background-color: #34495e;
+            padding: 15px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>

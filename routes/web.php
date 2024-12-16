@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SpecialController;
+use App\Http\Controllers\HistController;
 
 // Route::get('/', function () {
 //     return "Hello, this is the homepage!";
@@ -39,4 +40,16 @@ Route::post('/homepage', [HomeController::class, 'handleLogin'])->name('homepage
 
 Route::get('/special', [SpecialController::class, 'index'])->name('special');  // Para obtener la página
 Route::post('/special', [SpecialController::class, 'handleLogin'])->name('special');  // Para procesar el formulario de inicio de sesión
+
+
+Route::get('/hist', [HistController::class, 'index'])->name('hist');  // Para obtener la página
+Route::post('/hist', [HistController::class, 'handleLogin'])->name('hist');  // Para procesar el formulario de inicio de sesión
+
+
+// Route::get('/special', [SpecialController::class, 'index'])->name('special');  // Para obtener la página
+// Route::post('/special', [SpecialController::class, 'handleLogin'])->name('special');  // Para procesar el formulario de inicio de sesión
+
+
+// Route::get('/special', [SpecialController::class, 'index'])->name('special');  // Para obtener la página
+// Route::post('/special', [SpecialController::class, 'handleLogin'])->name('special');  // Para procesar el formulario de inicio de sesión
 

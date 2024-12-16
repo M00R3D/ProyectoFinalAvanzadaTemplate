@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
+
+@section('title', 'Cuidados Especiales')
+        <div class="navbar-frame">
+            @include('navbar')
+        </div>
+@section('content')
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -111,29 +116,9 @@
     </style>
 </head>
 <body>
-    <div class="navbar-frame">
-        <iframe src="navbar.blade.php" width="100%" height="100%" frameborder="0"></iframe>
-    </div>
     <div class="container-fluid d-flex">
         <aside class="sidebar col-md-3">
-        <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconhome.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/special.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconCare.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/hist.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconhist.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/patients.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconPatients.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/infopage.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconhelp.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/medicines.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconpill.png" alt="Logo" height="40">
-            </a>
+        @include('sidebar')
         </aside>
         <main class="content col-md-9">
             <h1>Dashboard</h1>
@@ -241,3 +226,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+@endsection
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
