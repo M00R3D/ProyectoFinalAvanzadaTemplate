@@ -39,6 +39,7 @@
             flex-wrap: nowrap; /* Evita que las columnas se superpongan */
         }
 
+        
         .sidebar {
             flex-shrink: 0; /* Impide que la barra lateral se reduzca */
         }

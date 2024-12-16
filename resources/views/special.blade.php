@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
+
+@section('title', 'Cuidados Especiales')
+        <div class="navbar-frame">
+            @include('navbar')
+        </div>
+@section('content')
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,13 +31,22 @@
             max-height: 40px;
         }
 
-        .sidebar {
-            background-color: #2c3e50;
-            padding: 15px;
+        .container-fluid {
             height: 100%;
-            width: 10%;
+            display: flex;
+            flex-wrap: nowrap; /* Evita que las columnas se superpongan */
         }
 
+        
+        .sidebar {
+            flex-shrink: 0; /* Impide que la barra lateral se reduzca */
+        }
+
+        .content {
+            flex-grow: 1; /* Permite que el contenido tome el espacio restante */
+            overflow-y: auto; /* Habilita scroll si hay demasiado contenido */
+            padding: 20px;
+        }
         .sidebar .btn {
             width: 100%;
             background-color: #34495e;
@@ -46,8 +60,6 @@
         .content {
             padding: 20px;
             background: linear-gradient(45deg, #45a247, #283c86);
-            flex-grow: 1;
-            width: 100%;
         }
 
         .panel {
@@ -61,8 +73,8 @@
             margin-bottom: 10px;
         }
 
-        .form-control, .btn {
-            margin: 5px 0;
+        .btn-space {
+            margin: 5px;
         }
 
         @media (max-width: 768px) {
@@ -78,41 +90,40 @@
             }
         }
 
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                max-height: 30px;
+            }
+
+            .content h1 {
+                font-size: 24px;
+            }
+        }
         .navbar-frame{
             width: 100%;
         }
-
-        .sidebar {
-            padding-right: 0;
+        .btn-historial{
+            margin-top: 30px;
+            width:20%;
         }
+        .table-right {
+            margin-top: 20px;
+            background-color: #34495e;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .dropdown-menu {
+    position: fixed !important;
+    z-index: 1050; /* Asegúrate de que sea mayor que el contenido principal */
+}
+
     </style>
 </head>
 <body>
 
-    <div class="navbar-frame">
-        <iframe src="navbar.blade.php" width="100%" height="100%" frameborder="0"></iframe>
-    </div>
-
     <div class="container-fluid d-flex">
         <aside class="sidebar col-md-3">
-        <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconhome.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/special.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconCare.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/hist.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconhist.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/patients.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconPatients.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/infopage.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconhelp.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/medicines.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconpill.png" alt="Logo" height="40">
-            </a>
+        @include('sidebar')
         </aside>
         <main class="content col-md-9">
             <h1>Agregar Cuidados Especiales</h1>
@@ -151,3 +162,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+@endsection
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

@@ -48,10 +48,10 @@
 </style>
 
 <aside class="sidebar">
-    <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
+    <a href="{{ route('homepage') }}" class="btn btn-primary" role="button">
         <img src="{{ asset('images/iconhome.png') }}" alt="Home">
     </a>
-    <a href="../../../resources/views/special.blade.php" class="btn btn-primary" role="button">
+    <a href="{{ route('special') }}" class="btn btn-primary" role="button">
         <img src="{{ asset('images/iconCare.png') }}" alt="Special">
     </a>
     <a href="../../../resources/views/hist.blade.php" class="btn btn-primary" role="button">
