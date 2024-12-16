@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('title', 'Homepage')
-
+        <div class="navbar-frame">
+            @include('navbar')
+        </div>
 @section('content')
-    <h1>Welcome to the Homepage</h1>
-    <!-- Your custom homepage content goes here -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,16 +33,21 @@
             max-height: 40px;
         }
 
-        .sidebar {
-            background-color: #2c3e50;
-            /* padding-right: 20px; */
-            padding: 15px;
+        .container-fluid {
             height: 100%;
-            /* margin-right: 20px; */
-            width: 10%;
-
+            display: flex;
+            flex-wrap: nowrap; /* Evita que las columnas se superpongan */
         }
 
+        .sidebar {
+            flex-shrink: 0; /* Impide que la barra lateral se reduzca */
+        }
+
+        .content {
+            flex-grow: 1; /* Permite que el contenido tome el espacio restante */
+            overflow-y: auto; /* Habilita scroll si hay demasiado contenido */
+            padding: 20px;
+        }
         .sidebar .btn {
             width: 100%;
             background-color: #34495e;
@@ -118,31 +121,10 @@
     </style>
 </head>
 <body>
-    <div class="navbar-frame">
-        @include('navbar')
-    </div>
+    
     <div class="container-fluid d-flex">
         <aside class="sidebar col-md-3">
-            <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
-                <img src="{{ asset('images/iconhome.png') }}" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/special.blade.php" class="btn btn-primary" role="button">
-                <img src="{{ asset('images/iconCare.png') }}" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/hist.blade.php" class="btn btn-primary" role="button">
-                <img src="{{ asset('images/iconhist.png') }}" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/patients.blade.php" class="btn btn-primary" role="button">
-                <img src="{{ asset('images/iconPatients.png') }}" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/infopage.blade.php" class="btn btn-primary" role="button">
-                <img src="{{ asset('images/iconhelp.png') }}" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/medicines.blade.php" class="btn btn-primary" role="button">
-                <img src="{{ asset('images/iconpill.png') }}" alt="Logo" height="40">
-            </a>
-
-            
+        @include('sidebar')
         </aside>
         <main class="content col-md-9">
         <h1>Dashboard</h1>
@@ -294,3 +276,4 @@
 
 
 @endsection
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
