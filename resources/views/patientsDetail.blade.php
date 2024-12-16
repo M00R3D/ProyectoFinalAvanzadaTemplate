@@ -1,12 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
+
+@section('title', 'Cuidados Especiales')
+        <div class="navbar-frame">
+            @include('navbar')
+        </div>
+@section('content')
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
+        .card{
+            color: black;
+        }
+         body {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -28,12 +36,9 @@
 
         .sidebar {
             background-color: #2c3e50;
-            /* padding-right: 20px; */
             padding: 15px;
             height: 100%;
-            /* margin-right: 20px; */
             width: 10%;
-
         }
 
         .sidebar .btn {
@@ -88,69 +93,36 @@
                 font-size: 24px;
             }
         }
+        
         .navbar-frame{
             width: 100%;
         }
+
         .btn-historial{
             margin-top: 30px;
             width:20%;
         }
+
         .table-right {
             margin-top: 20px;
             background-color: #34495e;
             padding: 15px;
             border-radius: 8px;
         }
-        .card {
-            max-width: 900px;
-            margin: 50px auto;
+
+        .table-left {
+            margin-top: 20px;
             background-color: #34495e;
-            color: white;
+            padding: 15px;
             border-radius: 8px;
-            padding: 20px;
-        }
-
-        .card-header {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .card-body {
-            font-size: 1.1rem;
-        }
-
-        .btn-edit {
-            width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class ="navbar-frame">
-        <iframe src="navbar.blade.php" width="100%" height="100%" frameborder="0"></iframe>
-    </div>
     <div class="container-fluid d-flex">
-        <aside class="sidebar col-md-3">
-            <a href="../../../resources/views/homepage.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconhome.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/special.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconCare.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/hist.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconhist.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/patients.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconPatients.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/infopage.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconhelp.png" alt="Logo" height="40">
-            </a>
-            <a href="../../../resources/views/medicines.blade.php" class="btn btn-primary" role="button">
-                <img src="../iconpill.png" alt="Logo" height="40">
-            </a>
-            
-            
-        </aside>
+        <!-- <aside class="sidebar col-md-3"> -->
+        @include('sidebar')
+        <!-- </aside> -->
         <main class="content col-md-9">
         <h1>Dashboard</h1>
 
@@ -193,3 +165,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+@endsection
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

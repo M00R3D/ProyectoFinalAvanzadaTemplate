@@ -57,7 +57,7 @@
     <a href="{{ route('hist') }}" class="btn btn-primary" role="button">
         <img src="{{ asset('images/iconhist.png') }}" alt="History">
     </a>
-    <a href="../../../resources/views/patients.blade.php" class="btn btn-primary" role="button">
+    <a href="{{ route('patients') }}" class="btn btn-primary" role="button">
         <img src="{{ asset('images/iconPatients.png') }}" alt="Patients">
     </a>
     <a href="../../../resources/views/infopage.blade.php" class="btn btn-primary" role="button">

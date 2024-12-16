@@ -219,21 +219,21 @@
                         <tr>
                             <td>Juan Pérez</td>
                             <td>
-                                <a href="../../../resources/views/patients.blade.php" class="btn btn-primary" role="button">
+                                <a href="{{ route('patients/details') }}" class="btn btn-primary" role="button">
                                     <img src="{{ asset('images/iconPatients.png') }}" alt="Logo" height="40">
                                 </a>
                             </td>                        </tr>
                         <tr>
                             <td>María López</td>
                             <td>
-                                <a href="../../../resources/views/patients.blade.php" class="btn btn-primary" role="button">
+                                <a href="{{ route('patients/details') }}" class="btn btn-primary" role="button">
                                     <img src="{{ asset('images/iconPatients.png') }}" alt="Logo" height="40">
                                 </a>
                             </td>                        </tr>
                         <tr>
                             <td>Carlos Sánchez</td>
                             <td>
-                                <a href="../../../resources/views/patients.blade.php" class="btn btn-primary" role="button">
+                                <a href="{{ route('patients/details') }}" class="btn btn-primary" role="button">
                                     <img src="{{ asset('images/iconPatients.png') }}" alt="Logo" height="40">
                                 </a>
                             </td>
@@ -241,14 +241,14 @@
                         <tr>
                             <td>Ana García</td>
                             <td>
-                                <a href="../../../resources/views/patients.blade.php" class="btn btn-primary" role="button">
+                                <a href="{{ route('patients/details') }}" class="btn btn-primary" role="button">
                                     <img src="{{ asset('images/iconPatients.png') }}" alt="Logo" height="40">
                                 </a>
                             </td>                        </tr>
                         <tr>
                             <td>Pedro Gómez</td>
                             <td>
-                                <a href="../../../resources/views/patients.blade.php" class="btn btn-primary" role="button">
+                                <a href="{{ route('patients/details') }}" class="btn btn-primary" role="button">
                                     <img src="{{ asset('images/iconPatients.png') }}" alt="Logo" height="40">
                                 </a>
                             </td>                        </tr>

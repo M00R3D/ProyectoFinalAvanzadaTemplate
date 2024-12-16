@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SpecialController;
 use App\Http\Controllers\HistController;
 use App\Http\Controllers\MedicinesController;
+use App\Http\Controllers\PatientsController;
 
 // Route::get('/', function () {
 //     return "Hello, this is the homepage!";
@@ -50,6 +51,10 @@ Route::post('/hist', [HistController::class, 'handleLogin'])->name('hist');  // 
 Route::get('/medicines', [MedicinesController::class, 'index'])->name('medicines');  // Para obtener la página
 Route::get('/medicines/details', [MedicinesController::class, 'details'])->name('medicines/details');
 Route::post('/medicines', [MedicinesController::class, 'handleLogin'])->name('medicines');  // Para procesar el formulario de inicio de sesión
+
+Route::get('/patients', [PatientsController::class, 'index'])->name('patients');  // Para obtener la página
+Route::get('/patients/details', [PatientsController::class, 'details'])->name('patients/details');
+Route::post('/patients', [PatientsController::class, 'handleLogin'])->name('patients');  // Para procesar el formulario de inicio de sesión
 
 
 // Route::get('/special', [SpecialController::class, 'index'])->name('special');  // Para obtener la página
