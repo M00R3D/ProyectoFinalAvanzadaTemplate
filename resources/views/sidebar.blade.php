@@ -60,7 +60,7 @@
     <a href="{{ route('patients') }}" class="btn btn-primary" role="button">
         <img src="{{ asset('images/iconPatients.png') }}" alt="Patients">
     </a>
-    <a href="../../../resources/views/infopage.blade.php" class="btn btn-primary" role="button">
+    <a href="{{ route('infopage') }}" class="btn btn-primary" role="button">
         <img src="{{ asset('images/iconhelp.png') }}" alt="Help">
     </a>
     <a href="{{ route('medicines') }}" class="btn btn-primary" role="button">
