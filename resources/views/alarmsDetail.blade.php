@@ -108,7 +108,7 @@
                         <p><strong>Descripción:</strong> Recordatorio para tomar Paracetamol a las 4:00 AM.</p>
                         
                         <!-- Botón para editar la alarma -->
-                        <a href="/alarms/edit" class="btn btn-warning">Editar Alarma</a>
+                        <a href="{{ route('alarms/edit') }}" class="btn btn-warning">Editar Alarma</a>
                     </div>
                 </div>
             </div>

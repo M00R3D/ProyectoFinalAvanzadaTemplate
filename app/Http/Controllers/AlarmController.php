@@ -17,4 +17,9 @@ class AlarmController extends Controller
     {
         return view('alarmsDetail'); // Asegúrate de tener esta vista creada
     }
+
+    public function edit()
+    {
+        return view('alarmsEdit'); // Asegúrate de tener esta vista creada
+    }
 }
