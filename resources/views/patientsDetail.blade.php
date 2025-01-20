@@ -142,9 +142,7 @@
                     <p><strong>Teléfono:</strong> +123 456 7890</p>
                     <p><strong>Estado de Salud:</strong> Estable</p>
                     <p><strong>Contraseña:</strong> ********</p>
-                    <a class="btn btn-warning btn-edit" href="../../../resources/views/patientsEdit.blade.php" class="btn btn-primary" role="button">
-                        EDITAR PACIENTE
-                    </a>
+                    <a href="{{ route('patients/edit') }}" class="btn btn-warning">EDITAR PACIENTE</a>
                 </div>
             </div>
         </main>

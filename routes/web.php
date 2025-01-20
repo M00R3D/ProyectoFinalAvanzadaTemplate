@@ -55,6 +55,7 @@ Route::post('/medicines', [MedicinesController::class, 'handleLogin'])->name('me
 Route::get('/patients', [PatientsController::class, 'index'])->name('patients');  // Para obtener la página
 Route::get('/patients/details', [PatientsController::class, 'details'])->name('patients/details');
 Route::post('/patients', [PatientsController::class, 'handleLogin'])->name('patients');  // Para procesar el formulario de inicio de sesión
+Route::get('/patients/edit', [PatientsController::class, 'edit'])->name('patients/edit');
 
 Route::get('/infopage', [InfopageController::class, 'index'])->name('infopage');  // Para obtener la página
 Route::post('/infopage', [InfopageController::class, 'handleLogin'])->name('infopage');  // Para procesar el formulario de inicio de sesión
