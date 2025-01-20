@@ -20,4 +20,9 @@ class MedicinesController extends Controller
     {
         return view('medicinesDetail'); // Asegúrate de tener esta vista creada
     }
+
+    public function edit()
+    {
+        return view('medicinesEdit'); // Asegúrate de tener esta vista creada
+    }
 }

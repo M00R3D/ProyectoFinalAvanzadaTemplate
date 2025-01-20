@@ -140,9 +140,7 @@
                                 <p><strong>Stock Disponible:</strong> 150 unidades</p>
                                 <p><strong>Dosis Recomendada:</strong> 500mg cada 8 horas</p>
                                 <p><strong>Frecuencia Recomendada:</strong> Cada 8 horas</p>
-                                <a class="btn btn-warning btn-edit" href="../../../resources/views/medicinesEdit.blade.php" role="button">
-                                    EDITAR MEDICAMENTO
-                                </a>
+                                <a href="{{ route('medicines/edit') }}" class="btn btn-warning">Editar Medicamento</a>
                             </div>
                         </div>
                     </div>
