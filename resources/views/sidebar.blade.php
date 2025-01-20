@@ -66,4 +66,8 @@
     <a href="{{ route('medicines') }}" class="btn btn-primary" role="button">
         <img src="{{ asset('images/iconpill.png') }}" alt="Medicines">
     </a>
+    <a href="{{ route('alarms') }}" class="btn btn-primary" role="button">
+        <img src="{{ asset('images/iconAlarm.png') }}" alt="Medicines">
+    </a>
+
 </aside>
