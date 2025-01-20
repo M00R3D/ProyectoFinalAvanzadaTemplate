@@ -61,6 +61,7 @@ Route::post('/infopage', [InfopageController::class, 'handleLogin'])->name('info
 
 // Ruta para ver las alarmas
 Route::get('/alarms', [AlarmController::class, 'index'])->name('alarms');
+Route::get('/alarms/details', [AlarmController::class, 'details'])->name('alarms/details');
 
 
 // Route::get('/special', [SpecialController::class, 'index'])->name('special');  // Para obtener la página

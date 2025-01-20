@@ -152,62 +152,62 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="/set-alarm-for-4-00-am/" class="btn btn-primary btn-sm">Alarma 4:00 AM</a></td>
+                        <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 4:00 AM</a></td>
                         <td>4:00 AM</td>
                         <td>Juan Pérez - Paracetamol</td>
                     </tr>
                     <tr>
-                        <td><a href="/set-alarm-for-5-00-am/" class="btn btn-primary btn-sm">Alarma 5:00 AM</a></td>
+                        <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 5:00 AM</a></td>
                         <td>5:00 AM</td>
                         <td>María López - Ibuprofeno</td>
                     </tr>
                     <tr>
-                        <td><a href="/set-alarm-for-6-00-am/" class="btn btn-primary btn-sm">Alarma 6:00 AM</a></td>
+                        <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 6:00 AM</a></>
                         <td>6:00 AM</td>
                         <td>Carlos Sánchez - Amoxicilina</td>
                     </tr>
                     <tr>
-                        <td><a href="/set-alarm-for-7-30-am/" class="btn btn-primary btn-sm">Alarma 7:30 AM</a></td>
+                        <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 7:30 AM</a></td>
                         <td>7:30 AM</td>
                         <td>Ana García - Omeprazol</td>
                     </tr>
                     <tr>
-                        <td><a href="/set-alarm-for-8-00-am/" class="btn btn-primary btn-sm">Alarma 8:00 AM</a></td>
+                        <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 8:00 AM</a></td>
                         <td>8:00 AM</td>
                         <td>Pedro Gómez - Insulina</td>
                     </tr>
                     <tr>
-                        <td><a href="/set-alarm-for-8-45-am/" class="btn btn-primary btn-sm">Alarma 8:45 AM</a></td>
+                        <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 8:45 AM</a></td>
                         <td>8:45 AM</td>
                         <td>Laura Ruiz - Loratadina</td>
                     </tr>
                     <tr>
-                        <td><a href="/set-alarm-for-9-00-am/" class="btn btn-primary btn-sm">Alarma 9:00 AM</a></td>
+                        <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 9:00 AM</a></td>
                         <td>9:00 AM</td>
                         <td>Ricardo Díaz - Metformina</td>
                     </tr>
                     <tr>
-                        <td><a href="/set-alarm-for-10-30-am/" class="btn btn-primary btn-sm">Alarma 10:30 AM</a></td>
+                        <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 10:30 AM</a></td>
                         <td>10:30 AM</td>
                         <td>Sofía Fernández - Salbutamol</td>
                     </tr>
                     <tr>
-                        <td><a href="/set-alarm-for-11-00-am/" class="btn btn-primary btn-sm">Alarma 11:00 AM</a></td>
+                        <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 11:00 AM</a></td>
                         <td>11:00 AM</td>
                         <td>Diego Martínez - Aspirina</td>
                     </tr>
                     <tr>
-                        <td><a href="/set-alarm-for-12-00-pm/" class="btn btn-primary btn-sm">Alarma 12:00 PM</a></td>
+                        <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 12:00 PM</a></td>
                         <td>12:00 PM</td>
                         <td>Gabriela Torres - Antibiótico</td>
                     </tr>
                     <tr>
-                        <td><a href="/set-alarm-for-1-00-pm/" class="btn btn-primary btn-sm">Alarma 1:00 PM</a></td>
+                        <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 1:00 PM</a></td>
                         <td>1:00 PM</td>
                         <td>Daniela Hernández - Vitamina C</td>
                     </tr>
                     <tr>
-                        <td><a href="/set-alarm-for-2-30-pm/" class="btn btn-primary btn-sm">Alarma 2:30 PM</a></td>
+                        <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 2:30 PM</a></td>
                         <td>2:30 PM</td>
                         <td>José Castillo - Antihistamínico</td>
                     </tr>

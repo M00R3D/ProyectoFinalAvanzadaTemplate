@@ -148,17 +148,17 @@
                             <tbody>
                                 <!-- Aquí se agregan las alarmas -->
                                 <tr>
-                                    <td><a href="/set-alarm-for-4-00-am/" class="btn btn-primary btn-sm">Alarma 4:00 AM</a></td>
+                                    <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 4:00 AM</a></td>
                                     <td>4:00 AM</td>
                                     <td>Juan Pérez - Paracetamol</td>
                                 </tr>
                                 <tr>
-                                    <td><a href="/set-alarm-for-5-00-am/" class="btn btn-primary btn-sm">Alarma 5:00 AM</a></td>
+                                    <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 5:00 AM</a></td>
                                     <td>5:00 AM</td>
                                     <td>María López - Ibuprofeno</td>
                                 </tr>
                                 <tr>
-                                    <td><a href="/set-alarm-for-6-00-am/" class="btn btn-primary btn-sm">Alarma 6:00 AM</a></td>
+                                    <td><a href="{{ route('alarms/details') }}" class="btn btn-primary btn-sm">Alarma 6:00 AM</a></td>
                                     <td>6:00 AM</td>
                                     <td>Carlos Sánchez - Amoxicilina</td>
                                 </tr>
