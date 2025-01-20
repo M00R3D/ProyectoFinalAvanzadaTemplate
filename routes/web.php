@@ -13,23 +13,21 @@ use App\Http\Controllers\InfopageController;
 // });
 
 
+// web.php
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
 
-Route::post('/homepage', function (Request $request) {
-    $email = 'job@mail.com';
-    $password = '666';
-    $email2 = 'isaias@mail.com';
-    $password2 = '12345';
-    if ($request->email === $email && $request->password === $password) {
-        return redirect('/homepage');
-    } else if ($request->email === $email2 && $request->password === $password2) {
-        return redirect('/homepage');
-    }
-    return redirect('/')->with('error', 'Credenciales incorrectas');
-});
+Route::post('/login', [HomeController::class, 'handleLogin'])->name('handleLogin');
+// Ruta para manejar el inicio de sesión
+
+// Ruta para la página de inicio
+Route::get('/homepage', [HomeController::class, 'index'])->name('homepage');
+
+// Ruta para cerrar sesión
+Route::post('/logout', [HomeController::class, 'handleLogout'])->name('logout');
+
 
 
 // Route::get('/homepage', function () {

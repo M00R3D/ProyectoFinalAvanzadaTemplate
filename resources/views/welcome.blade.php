@@ -235,7 +235,8 @@
     <div class="container">
         <div id="loginForm">
             <h2>Inicia Sesión</h2>
-            <form method="get" action="{{ route('homepage') }}">
+            <form method="POST" action="{{ route('handleLogin') }}">
+                @csrf <!-- Token CSRF necesario para proteger el formulario -->
                 <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
                     <input type="email" id="email" name="email" class="form-control" required>
@@ -245,7 +246,6 @@
                     <input type="password" id="password" name="password" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                <p class="message">¿No tienes una cuenta? <a href="#" onclick="showRegisterForm()">Regístrate aquí</a></p>
             </form>
         </div>
 
