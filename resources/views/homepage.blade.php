@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('title', 'Homepage')
-        <div class="navbar-frame">
-            @include('navbar')
-        </div>
+
+<div class="navbar-frame">
+    @include('navbar')
+</div>
+
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +20,19 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            background: linear-gradient(45deg, #45a247, #283c86);
+            background: linear-gradient(45deg,rgb(0, 0, 0), #283c86);
             min-height: 100vh;
             margin: 0;
             padding: 0;
             color: white;
+        }
+
+        .content[data-theme="dark"] {
+            background: linear-gradient(45deg,rgb(59, 30, 67), #283c86);
+        }
+
+        .content[data-theme="light"] {
+            background: linear-gradient(45deg, #283c86, #45a247);
         }
 
         .navbar {
@@ -52,7 +62,7 @@
 
         .content {
             padding: 20px;
-            background: linear-gradient(45deg, #45a247, #283c86);
+            /* background: linear-gradient(45deg,rgb(0, 0, 0), #283c86); */
         }
 
         .panel {
@@ -117,6 +127,7 @@
         }
     </style>
 </head>
+<body>
 <body>
     
     <div class="container-fluid d-flex">
@@ -266,11 +277,12 @@
 
         </main>
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme); // Aplicar el tema al body
+    });
+</script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-@endsection
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

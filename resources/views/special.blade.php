@@ -22,7 +22,13 @@
             padding: 0;
             color: white;
         }
+        .content[data-theme="dark"] {
+            background: linear-gradient(45deg,rgb(59, 30, 67), #283c86);
+        }
 
+        .content[data-theme="light"] {
+            background: linear-gradient(45deg, #283c86, #45a247);
+        }
         .navbar {
             background: linear-gradient(to right, #1CB5E0, #000046);
         }
@@ -156,6 +162,13 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme); // Aplicar el tema al body
+    });
+</script>
+
 </body>
 </html>
 @endsection

@@ -23,12 +23,22 @@
         color: black;
     }
 
+    .navbar[data-theme="dark"] {
+        background: linear-gradient(45deg,rgb(59, 30, 67), #283c86);
+        color: white;
+    }
+    
+    .navbar[data-theme="light"] {
+        background: linear-gradient(45deg, #283c86, #45a247);
+        color: black;
+    }
+
     .navbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 20px;
-        background: linear-gradient(to right, #1CB5E0, #000046);
+        /* background: linear-gradient(to right, #1CB5E0, #000046); */
         max-height: 78px;
         width: 100%;
         animation: pulse 6s infinite;
@@ -150,7 +160,7 @@
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script>
+<!-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         const themeSelector = document.getElementById('themeSelector');
         const savedTheme = localStorage.getItem('theme') || 'light';
@@ -161,6 +171,35 @@
             const selectedTheme = themeSelector.value;
             document.body.setAttribute('data-theme', selectedTheme);
             localStorage.setItem('theme', selectedTheme);
+            document.querySelector('.content').setAttribute('data-theme', selectedTheme);  // Update content theme
+        });
+    });
+</script> -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Seleccionar elementos relevantes
+        const themeSelector = document.getElementById('themeSelector');
+        const body = document.body;
+        const navbar = document.querySelector('.navbar');
+
+        // Obtener el tema guardado en localStorage o usar un tema predeterminado
+        const savedTheme = localStorage.getItem('theme') || 'light';
+
+        // Aplicar el tema al body y la navbar
+        body.setAttribute('data-theme', savedTheme);
+        navbar.setAttribute('data-theme', savedTheme);
+        themeSelector.value = savedTheme;
+
+        // Cambiar el tema cuando el usuario seleccione uno diferente
+        themeSelector.addEventListener('change', function () {
+            const selectedTheme = themeSelector.value;
+            body.setAttribute('data-theme', selectedTheme);
+            navbar.setAttribute('data-theme', selectedTheme);
+
+            // Guardar el tema seleccionado en localStorage
+            localStorage.setItem('theme', selectedTheme);
         });
     });
 </script>
+

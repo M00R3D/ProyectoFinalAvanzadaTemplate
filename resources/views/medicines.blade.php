@@ -50,7 +50,7 @@
 
         .content {
             padding: 20px;
-            background: linear-gradient(45deg, #45a247, #283c86);
+            /* background: linear-gradient(45deg, #45a247, #283c86); */
         }
 
         .panel {
