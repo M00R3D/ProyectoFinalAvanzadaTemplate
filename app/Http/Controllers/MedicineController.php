@@ -13,13 +13,27 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        $medicines = Medicine::all();
-
-        return response()->json([
-            'success' => true,
-            'data' => $medicines
-        ], 200); // Código HTTP 200: OK
+        return view('medicines');
     }
+
+    public function handleLogin(Request $request)
+    {
+        // Lógica de inicio de sesión
+    }
+
+    public function details()
+    {
+        return view('medicinesDetail'); // Asegúrate de tener esta vista creada
+    }
+     // public function index()
+    // {
+    //     $medicines = Medicine::all();
+
+    //     return response()->json([
+    //         'success' => true,
+    //         'data' => $medicines
+    //     ], 200); // Código HTTP 200: OK
+    // }
 
     /**
      * Crear una nueva medicina.

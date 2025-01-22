@@ -10,13 +10,28 @@ class PatientController extends Controller
 {
     public function index()
     {
-        $patients = Patient::all();
-
-        return response()->json([
-            'success' => true,
-            'data' => $patients
-        ], 200);
+        return view('patients');
     }
+
+    public function handleLogin(Request $request)
+    {
+        // Lógica de inicio de sesión
+    }
+
+    public function details()
+    {
+        return view('patientsDetail'); // Asegúrate de tener esta vista creada
+    }
+
+    // public function index()
+    // {
+    //     $patients = Patient::all();
+
+    //     return response()->json([
+    //         'success' => true,
+    //         'data' => $patients
+    //     ], 200);
+    // }
 
     public function store(Request $request)
     {
