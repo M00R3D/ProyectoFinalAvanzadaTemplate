@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('patients', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id_patient');
+            $table->unsignedBigInteger('user_id');
+            $table->string('address', 255);
+            $table->string('phone', 15);
+            $table->text('health_status')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id_user')->on('users')->onDelete('cascade');
         });
     }
 
