@@ -170,23 +170,33 @@
                                 Nombre del Medicamento
                             </div>
                             <div class="card-body">
-                            <form action="{{ route('medicines.update', $medicine->id) }}" method="POST">
-    @csrf
-    @method('PUT')
-    <div class="mb-3">
-        <label for="nombreMedicamento" class="form-label">Nombre del Medicamento</label>
-        <input type="text" class="form-control" id="nombreMedicamento" name="name" value="{{ old('name', $medicine->name) }}" required>
-    </div>
-    <div class="mb-3">
-        <label for="descripcionMedicamento" class="form-label">Descripción</label>
-        <textarea class="form-control" id="descripcionMedicamento" name="description" rows="3" required>{{ old('description', $medicine->description) }}</textarea>
-    </div>
-    <div class="mb-3">
-        <label for="stockMedicamento" class="form-label">Stock Disponible</label>
-        <input type="number" class="form-control" id="stockMedicamento" name="stock" value="{{ old('stock', $medicine->stock) }}" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-</form>
+<form action="{{ route('medicines.update', $medicine->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+        <div class="mb-3">
+            <label for="nombreMedicamento" class="form-label">Nombre del Medicamento</label>
+            <input type="text" class="form-control" id="nombreMedicamento" name="name" value="{{ old('name', $medicine->name) }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="descripcionMedicamento" class="form-label">Descripción</label>
+            <textarea class="form-control" id="descripcionMedicamento" name="description" rows="3" required>{{ old('description', $medicine->description) }}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="stockMedicamento" class="form-label">Stock Disponible</label>
+            <input type="number" class="form-control" id="stockMedicamento" name="stock" value="{{ old('stock', $medicine->stock) }}" required>
+        </div>
+        <div class="mb-3">
+            <!-- Campo para la dosis -->
+            <label for="dosage">Dosis:</label>
+            <input type="text" name="dosage" id="dosage" value="{{ old('dosage', $medicine->dosage) }}" required>
+        </div>
+        <div class="mb-3">
+            <!-- Campo para la frecuencia -->
+            <label for="frequency">Frecuencia:</label>
+            <input type="text" name="frequency" id="frequency" value="{{ old('frequency', $medicine->frequency) }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </form>
                             </div>
                         </div>
                     </div>
@@ -197,6 +207,19 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        @if (session('success'))
+            alert("{{ session('success') }}");
+            setTimeout(function() {
+                window.history.back(); // Regresar a la página anterior después de 2 segundos
+            }, 2000);
+        @elseif (session('error'))
+            alert("{{ session('error') }}");
+            setTimeout(function() {
+                window.history.back(); // Regresar a la página anterior después de 2 segundos
+            }, 2000);
+        @endif
+    </script>
 </body>
 </html>
 @endsection

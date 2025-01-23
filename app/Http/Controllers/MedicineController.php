@@ -95,40 +95,25 @@ class MedicineController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $medicine = Medicine::find($id);
-
-        if (!$medicine) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Medicine not found'
-            ], 404); // Código HTTP 404: Not Found
-        }
-
-        // Validar los datos de entrada
-        $validator = Validator::make($request->all(), [
+        $medicine = Medicine::findOrFail($id);
+    
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'dosage' => 'required|string|max:50',
-            'frequency' => 'required|string|max:50',
+            'dosage' => 'required|string|max:255',
+            'frequency' => 'required|string|max:255',
+            // Otros campos si los hay
         ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Validation errors',
-                'errors' => $validator->errors()
-            ], 422); // Código HTTP 422: Unprocessable Entity
+    
+        try {
+            $medicine->update($validated);
+            return redirect()->route('medicines.edit', $medicine->id)
+                ->with('success', 'Medicamento actualizado correctamente');
+        } catch (\Exception $e) {
+            return redirect()->route('medicines.edit', $medicine->id)
+                ->with('error', 'Hubo un error al guardar los cambios');
         }
-
-        // Actualizar la medicina
-        $medicine->update($request->all());
-
-        return response()->json([
-            'success' => true,
-            'message' => 'Medicine updated successfully',
-            'data' => $medicine
-        ], 200); // Código HTTP 200: OK
     }
+    
 
     /**
      * Eliminar una medicina específica.
