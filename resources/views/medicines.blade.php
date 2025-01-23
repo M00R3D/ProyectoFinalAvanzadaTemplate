@@ -67,6 +67,10 @@
             margin: 5px;
         }
 
+        .modal-dialog{
+            color:black;
+        }
+
         @media (max-width: 768px) {
             .sidebar {
                 position: fixed;
@@ -188,70 +192,79 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        let editingIndex = null;
-        const medicinas = [
-            { nombre: "Paracetamol", descripcion: "Analgésico y antipirético", stock: 20 },
-            { nombre: "Ibuprofeno", descripcion: "Antiinflamatorio no esteroideo", stock: 15 },
-        ];
+    const medicinasTable = document.getElementById('medicinas-table');
 
-        const medicinasTable = document.getElementById('medicinas-table');
+    function renderMedicinas() {
+        medicinasTable.innerHTML = '';
+        medicinas.forEach((medicina, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${medicina.nombre}</td>
+                <td>${medicina.descripcion}</td>
+                <td>${medicina.stock} unidades</td>
+                <td>
+                    <a href="{{ route('medicines/edit') }}" class="btn btn-warning">Editar</a>
+                    <button class="btn btn-danger btn-sm" onclick="deleteMedicine(${index})">Borrar</button>
+                </td>
+            `;
+            medicinasTable.appendChild(row);
+        });
+    }
 
-        function renderMedicinas() {
-            medicinasTable.innerHTML = '';
-            medicinas.forEach((medicina, index) => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${medicina.nombre}</td>
-                    <td>${medicina.descripcion}</td>
-                    <td>${medicina.stock} unidades</td>
-                    <td>
-                        <a href="{{ route('medicines/edit') }}" class="btn btn-warning">Editar</a>
-                        <button class="btn btn-danger btn-sm" onclick="deleteMedicine(${index})">Borrar</button>
-                    </td>
-                `;
-                medicinasTable.appendChild(row);
+    // Abre el modal de agregar/editar
+    function openModal() {
+        document.getElementById('medicineForm').reset();
+        editingIndex = null;
+        document.getElementById('medicineModalLabel').textContent = 'Agregar Medicina';
+    }
+
+    // Función para guardar o actualizar la medicina
+    async function saveMedicine() {
+        const nombre = document.getElementById('medicineName').value;
+        const descripcion = document.getElementById('medicineDescription').value;
+        const stock = document.getElementById('medicineStock').value;
+
+        // Crear un objeto de los datos
+        const formData = {
+            name: nombre,
+            description: descripcion,
+            dosage: "N/A", // Si no es necesario, puede dejarlo como 'N/A' o ajustarlo
+            frequency: "N/A", // Lo mismo para 'frequency'
+        };
+
+        try {
+            // Enviar los datos al backend con una solicitud POST
+            const response = await fetch("{{ route('medicines.store') }}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": "{{ csrf_token() }}", // Incluye el token CSRF para seguridad
+                },
+                body: JSON.stringify(formData),
             });
-        }
 
-        function openModal() {
-            document.getElementById('medicineForm').reset();
-            editingIndex = null;
-            document.getElementById('medicineModalLabel').textContent = 'Agregar Medicina';
-        }
+            const data = await response.json();
 
-        function editMedicine(index) {
-            editingIndex = index;
-            const medicina = medicinas[index];
-            document.getElementById('medicineName').value = medicina.nombre;
-            document.getElementById('medicineDescription').value = medicina.descripcion;
-            document.getElementById('medicineStock').value = medicina.stock;
-            document.getElementById('medicineModalLabel').textContent = 'Editar Medicina';
-            const modal = new bootstrap.Modal(document.getElementById('medicineModal'));
-            modal.show();
-        }
-
-        function saveMedicine() {
-            const nombre = document.getElementById('medicineName').value;
-            const descripcion = document.getElementById('medicineDescription').value;
-            const stock = document.getElementById('medicineStock').value;
-
-            if (editingIndex === null) {
-                medicinas.push({ nombre, descripcion, stock: parseInt(stock, 10) });
+            // Verifica si la medicina fue agregada correctamente
+            if (data.success) {
+                alert('Medicamento agregado correctamente');
+                renderMedicinas();  // Actualiza la lista de medicinas
             } else {
-                medicinas[editingIndex] = { nombre, descripcion, stock: parseInt(stock, 10) };
+                alert('Error al agregar medicamento');
             }
 
-            renderMedicinas();
+            // Cierra el modal
             const modal = bootstrap.Modal.getInstance(document.getElementById('medicineModal'));
             modal.hide();
+        } catch (error) {
+            console.error(error);
+            alert('Hubo un error al intentar agregar el medicamento');
         }
+    }
 
-        function deleteMedicine(index) {
-            medicinas.splice(index, 1);
-            renderMedicinas();
-        }
+    // Renderiza las medicinas al cargar la página
+    renderMedicinas();
+</script>
 
-        renderMedicinas();
-    </script>
 </body>
 @endsection

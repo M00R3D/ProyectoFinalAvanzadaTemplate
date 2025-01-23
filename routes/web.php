@@ -47,6 +47,7 @@ Route::get('/medicines', [MedicineController::class, 'index'])->name('medicines'
 Route::get('/medicines/details', [MedicineController::class, 'details'])->name('medicines/details');
 Route::post('/medicines', [MedicineController::class, 'handleLogin'])->name('medicines');  // Para procesar el formulario de inicio de sesión
 Route::get('/medicines/edit', [MedicineController::class, 'edit'])->name('medicines/edit');
+Route::post('/medicines', [MedicineController::class, 'store'])->name('medicines.store');
 
 Route::get('/alarms', [AlarmController::class, 'index'])->name('alarms');
 Route::get('/alarms/details', [AlarmController::class, 'details'])->name('alarms/details');
