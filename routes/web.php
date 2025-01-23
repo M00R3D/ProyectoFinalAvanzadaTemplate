@@ -8,6 +8,7 @@ use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\InfopageController;
 use App\Http\Controllers\AlarmController;
+use App\Http\Controllers\UserController;
 
 // web.php
 Route::get('/', function () {
@@ -19,6 +20,12 @@ Route::get('/homepage', [HomeController::class, 'index'])->name('homepage');
 Route::post('/logout', [HomeController::class, 'handleLogout'])->name('logout');
 Route::get('/homepage', [HomeController::class, 'index'])->name('homepage');  // Para obtener la página
 Route::post('/homepage', [HomeController::class, 'handleLogin'])->name('homepage');  // Para procesar el formulario de inicio de sesión
+
+Route::get('/users', [UserController::class, 'index'])->name('users.index'); // Listar todos los usuarios
+Route::post('/users', [UserController::class, 'store'])->name('users.store'); // Crear un nuevo usuario
+Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show'); // Mostrar un usuario específico
+Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update'); // Actualizar un usuario
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy'); // Eliminar un usuario
 
 
 Route::get('/special', [SpecialController::class, 'index'])->name('special');  // Para obtener la página
