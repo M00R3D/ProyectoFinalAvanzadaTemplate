@@ -151,4 +151,11 @@ class MedicineController extends Controller
             'message' => 'Medicine deleted successfully'
         ], 200); // Código HTTP 200: OK
     }
+
+    public function edit($id)
+    {
+        $medicine = Medicine::findOrFail($id);
+        return view('medicines.edit', compact('medicine'));
+    }
+
 }

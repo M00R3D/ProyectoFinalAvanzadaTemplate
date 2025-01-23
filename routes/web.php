@@ -52,6 +52,8 @@ Route::get('/medicines/{id}/edit', [MedicineController::class, 'edit'])->name('m
 Route::post('/medicines', [MedicineController::class, 'store'])->name('medicines.store');
 Route::delete('/medicines/{id}', [MedicineController::class, 'destroy'])->name('medicines.destroy');
 Route::get('/medicines/edit', [MedicineController::class, 'edit'])->name('medicines/edit');
+Route::get('/medicines/{id}/edit', [MedicineController::class, 'edit'])->name('medicines.edit');
+Route::put('/medicines/{medicine}', [MedicineController::class, 'update'])->name('medicines.update');
 
 
 Route::get('/alarms', [AlarmController::class, 'index'])->name('alarms');

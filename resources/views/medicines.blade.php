@@ -173,7 +173,6 @@
                         <td>{{ $medicine->frequency }}</td>
                         <td>
                             <!-- Aquí puedes agregar acciones como editar y eliminar -->
-                            <a href="{{ route('medicines.details', $medicine->id) }}" class="btn btn-info">Detalles</a>
                             <a href="{{ route('medicines.edit', $medicine->id) }}" class="btn btn-warning">Editar</a>
                             <form action="{{ route('medicines.destroy', $medicine->id) }}" method="POST" style="display:inline;">
                                 @csrf

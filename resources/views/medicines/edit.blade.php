@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Editar Paciente')
+@section('title', 'Editar Medicamento')
 <div class="navbar-frame">
     @include('navbar')
 </div>
