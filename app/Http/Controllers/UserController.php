@@ -34,15 +34,13 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|confirmed', // El campo "password_confirmation" debe ser enviado
         ]);
-
+    
         if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Validation errors',
-                'errors' => $validator->errors()
-            ], 422);
+            return redirect()->route('welcome')  // Redirige a la página de bienvenida
+                    ->withErrors($validator)   // Se envían los errores de validación
+                    ->withInput(); // Conserva los valores del formulario
         }
-
+    
         // Crear el usuario con la contraseña encriptada
         $user = User::create([
             'first_name' => $request->first_name,
@@ -50,13 +48,12 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password), // Encriptar la contraseña
         ]);
-
-        return response()->json([
-            'success' => true,
-            'message' => 'User created successfully',
-            'data' => $user
-        ], 201);
+    
+        // Enviar un mensaje de éxito
+        return redirect()->route('welcome')
+                ->with('success', 'Usuario registrado con éxito.');  // Mensaje de éxito
     }
+    
 
     /**
      * Mostrar un usuario específico.
