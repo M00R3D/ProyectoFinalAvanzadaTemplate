@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->bigIncrements('id_patient');
             $table->unsignedBigInteger('user_id');
-            $table->string('address', 255);
+            $table->string('first_name', 100);
+            $table->string('last_name', 100);
+            $table->date('birth_date');
+            $table->string('gender', 10);
+            $table->text('address')->nullable();
             $table->string('phone', 15);
             $table->text('health_status')->nullable();
             $table->timestamps();

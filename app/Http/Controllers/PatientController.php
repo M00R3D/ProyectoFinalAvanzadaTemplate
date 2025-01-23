@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Validator;
 
 class PatientController extends Controller
 {
-    public function index()
+    /*public function index()
     {
         return view('patients');
-    }
+    }*/
 
     public function handleLogin(Request $request)
     {
@@ -23,23 +23,27 @@ class PatientController extends Controller
         return view('patientsDetail'); // Asegúrate de tener esta vista creada
     }
 
-    // public function index()
-    // {
-    //     $patients = Patient::all();
+    public function index()
+    {
+        $patients = Patient::all();
 
-    //     return response()->json([
-    //         'success' => true,
-    //         'data' => $patients
-    //     ], 200);
-    // }
+        return response()->json([
+            'success' => true,
+                'data' => $patients
+            ], 200);
+    }
 
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'age' => 'required|integer|min:0',
-            'medical_history' => 'nullable|string',
-            'user_id' => 'required|exists:users,id_user'
+            'user_id' => 'required|exists:users,id_user',
+            'first_name' => 'required|string|max:100',
+            'last_name' => 'required|string|max:100',
+            'birth_date' => 'required|date',
+            'gender' => 'required|string|max:10',
+            'address' => 'nullable|string',
+            'phone' => 'required|string|max:15',
+            'health_status' => 'nullable|string',
         ]);
 
         if ($validator->fails()) {
@@ -88,10 +92,13 @@ class PatientController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'age' => 'required|integer|min:0',
-            'medical_history' => 'nullable|string',
-            'user_id' => 'required|exists:users,id_user'
+            'first_name' => 'sometimes|string|max:100',
+            'last_name' => 'sometimes|string|max:100',
+            'birth_date' => 'sometimes|date',
+            'gender' => 'sometimes|string|max:10',
+            'address' => 'nullable|string',
+            'phone' => 'sometimes|string|max:15',
+            'health_status' => 'nullable|string',
         ]);
 
         if ($validator->fails()) {

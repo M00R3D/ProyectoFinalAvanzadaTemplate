@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('last_name', 100);
             $table->string('email', 255)->unique();
             $table->string('password', 255);
-            $table->enum('role', ['undefined', 'caregiver', 'patient'])->default('patient');
             $table->timestamps();
         });
     }
