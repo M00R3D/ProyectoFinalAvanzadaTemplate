@@ -132,7 +132,9 @@
                 <option value="dark">Tema Oscuro</option>
             </select>
         </div>
-        <span class="navbar-text me-3">Bienvenido, Job Moore</span>
+        <span class="navbar-text me-3">
+            Bienvenido, {{ session(key: 'user') ?? 'Invitado' }}
+        </span>
         <div class="dropdown">
             <button class="btn dropdown-toggle btn-with-icon btn-dropdown1" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="{{ asset('images/iconflecha.png') }}" alt="Logo" height="40">
