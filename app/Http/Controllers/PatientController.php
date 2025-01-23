@@ -8,10 +8,15 @@ use Illuminate\Support\Facades\Validator;
 
 class PatientController extends Controller
 {
-    /*public function index()
+    public function index()
     {
-        return view('patients');
-    }*/
+        // Obtener todos los pacientes desde la base de datos
+        $patients = Patient::all();
+    
+        // Pasar los datos a la vista
+        return view('patients', ['patients' => $patients]);
+    }
+    
 
     public function handleLogin(Request $request)
     {
@@ -20,18 +25,18 @@ class PatientController extends Controller
 
     public function details()
     {
-        return view('patientsDetail'); // Asegúrate de tener esta vista creada
+        return view(view: 'patientsDetail'); // Asegúrate de tener esta vista creada
     }
 
-    public function index()
-    {
-        $patients = Patient::all();
+    // public function index()
+    // {
+    //     $patients = Patient::all();
 
-        return response()->json([
-            'success' => true,
-                'data' => $patients
-            ], 200);
-    }
+    //     return response()->json([
+    //         'success' => true,
+    //             'data' => $patients
+    //         ], 200);
+    // }
 
     public function store(Request $request)
     {
