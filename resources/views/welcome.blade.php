@@ -246,6 +246,7 @@
                     <input type="password" id="password" name="password" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                <p class="message">¿No tienes una cuenta? <a href="#" onclick="showRegisterForm()">Regístrate aquí</a></p>
             </form>
         </div>
 
@@ -292,6 +293,7 @@
                         <input type="text" id="especialidad" name="especialidad" class="form-control" required>
                         <p class="message">¿Ya tienes una cuenta? <a href="#" onclick="showLoginForm()">Inicia Sesión</a></p>
                     </div>
+                    <button type="submit" class="btn btn-warning">Registrarse</button>
                 </form>
             </div>
 
@@ -311,6 +313,8 @@
                         <textarea id="estado_salud" name="estado_salud" class="form-control" rows="4" required></textarea>
                         <p class="message">¿Ya tienes una cuenta? <a href="#" onclick="showLoginForm()">Inicia Sesión</a></p>
                     </div>
+                    <button type="submit" class="btn btn-warning">Registrarse</button>
+
                 </form>
             </div>
             
@@ -333,23 +337,28 @@
         }
 
         function toggleRoleForm() {
-            const role = document.getElementById('role').value;
+            const role = document.getElementById('role').value; // Obtén el rol seleccionado
+            // Ocultamos los formularios
             document.getElementById('loginForm').classList.add('hidden');
             document.getElementById('registerForm').classList.add('hidden');
+            document.getElementById('registerCareForm').classList.add('hidden');
+            document.getElementById('registerPatientForm').classList.add('hidden');
+
+            // Muestra el formulario correspondiente al rol seleccionado
             if (role === 'paciente') {
                 document.getElementById('registerPatientForm').classList.remove('hidden');
-                document.getElementById('registerCareForm').classList.add('hidden');
             } else if (role === 'cuidador') {
                 document.getElementById('registerCareForm').classList.remove('hidden');
-                document.getElementById('registerPatientForm').classList.add('hidden');
             }
         }
+
         function showRegisterForm() {
             document.getElementById('loginForm').classList.add('hidden');
             document.getElementById('registerForm').classList.remove('hidden');
             document.getElementById('registerPatientForm').classList.add('hidden');
             document.getElementById('registerCareForm').classList.add('hidden');
         }
+        
     </script>
 
 
