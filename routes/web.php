@@ -32,7 +32,7 @@ Route::get('/special', [SpecialController::class, 'index'])->name('special');  /
 Route::post('/special', [SpecialController::class, 'handleLogin'])->name('special');  // Para procesar el formulario de inicio de sesión
 
 
-Route::get('/hist', [HistController::class, 'index'])->name('hist');  // Para obtener la página
+Route::get('/hist', action: [HistController::class, 'index'])->name('hist');  // Para obtener la página
 Route::post('/hist', [HistController::class, 'handleLogin'])->name('hist');  // Para procesar el formulario de inicio de sesión
 
 Route::get('/patients', [PatientController::class, 'index'])->name('patients');  // Para obtener la página
@@ -45,9 +45,14 @@ Route::post('/infopage', [InfopageController::class, 'handleLogin'])->name('info
 
 Route::get('/medicines', [MedicineController::class, 'index'])->name('medicines');  // Para obtener la página
 Route::get('/medicines/details', [MedicineController::class, 'details'])->name('medicines/details');
+Route::get('/medicines/{id}', [MedicineController::class, 'show'])->name('medicines.details');
+
 Route::post('/medicines', [MedicineController::class, 'handleLogin'])->name('medicines');  // Para procesar el formulario de inicio de sesión
-Route::get('/medicines/edit', [MedicineController::class, 'edit'])->name('medicines/edit');
+Route::get('/medicines/{id}/edit', [MedicineController::class, 'edit'])->name('medicines.edit');
 Route::post('/medicines', [MedicineController::class, 'store'])->name('medicines.store');
+Route::delete('/medicines/{id}', [MedicineController::class, 'destroy'])->name('medicines.destroy');
+Route::get('/medicines/edit', [MedicineController::class, 'edit'])->name('medicines/edit');
+
 
 Route::get('/alarms', [AlarmController::class, 'index'])->name('alarms');
 Route::get('/alarms/details', [AlarmController::class, 'details'])->name('alarms/details');

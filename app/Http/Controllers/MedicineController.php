@@ -12,9 +12,13 @@ class MedicineController extends Controller
      * Obtener todas las medicinas.
      */
     public function index()
-    {
-        return view('medicines');
-    }
+{
+    // Obtener todas las medicinas
+    $medicines = Medicine::all();
+
+    // Pasar las medicinas a la vista
+    return view('medicines', compact('medicines'));
+}
 
     public function handleLogin(Request $request)
     {

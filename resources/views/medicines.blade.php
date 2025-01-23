@@ -133,7 +133,19 @@
         }
     </style>
 </head>
-<body>
+    <body>
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <div class="container-fluid d-flex">
         @include('sidebar')
         <main class="content col-md-9">
@@ -142,17 +154,37 @@
                 <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#medicineModal" onclick="openModal()">Agregar Medicina</button>
                 <div class="col-lg-12 table-right">
                     <h5>Lista de Medicinas</h5>
-                    <table class="table table-striped table-hover">
-                        <thead class="table-primary">
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Descripción</th>
-                                <th>Cantidad en Stock</th>
-                                <th>Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody id="medicinas-table"></tbody>
-                    </table>
+                    <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Dosificación</th>
+                    <th>Frecuencia</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($medicines as $medicine)
+                    <tr>
+                        <td>{{ $medicine->name }}</td>
+                        <td>{{ $medicine->description ?? 'N/A' }}</td>
+                        <td>{{ $medicine->dosage }}</td>
+                        <td>{{ $medicine->frequency }}</td>
+                        <td>
+                            <!-- Aquí puedes agregar acciones como editar y eliminar -->
+                            <a href="{{ route('medicines.details', $medicine->id) }}" class="btn btn-info">Detalles</a>
+                            <a href="{{ route('medicines.edit', $medicine->id) }}" class="btn btn-warning">Editar</a>
+                            <form action="{{ route('medicines.destroy', $medicine->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
                 </div>
             </div>
         </main>
