@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User; // Asegúrate de importar el modelo User
+use Illuminate\Support\Facades\Hash; // Para usar la función Hash::check
 class HomeController extends Controller
 {
     // Mostrar la página de inicio solo si el usuario está autenticado
@@ -21,21 +22,22 @@ class HomeController extends Controller
     // Manejar el inicio de sesión y validar las credenciales
     public function handleLogin(Request $request)
     {
-        // Credenciales de prueba (puedes reemplazar esto por una validación real)
-        $credentials = [
-            ['email' => 'job@mail.com', 'password' => '666', 'user' => 'Job Moore'],
-            ['email' => 'isaias@mail.com', 'password' => '12345', 'user' => 'Isaias']
-        ];
+        // Validar que el correo y la contraseña sean proporcionados
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-        // Verificar las credenciales ingresadas
-        foreach ($credentials as $credential) {
-            if ($request->email === $credential['email'] && $request->password === $credential['password']) {
-                // Guardar el nombre de usuario en la sesión
-                $request->session()->put('user', $credential['user']);
-                
-                // Redirigir a la página de inicio después de un inicio de sesión exitoso
-                return redirect()->route('homepage')->with('success', 'Inicio de sesión exitoso');
-            }
+        // Buscar el usuario en la base de datos
+        $user = User::where('email', $request->email)->first();
+
+        // Verificar si el usuario existe y la contraseña es correcta
+        if ($user && Hash::check($request->password, $user->password)) {
+            // Guardar el nombre de usuario en la sesión
+            $request->session()->put('user', $user->first_name . ' ' . $user->last_name);
+            
+            // Redirigir a la página de inicio después de un inicio de sesión exitoso
+            return redirect()->route('homepage')->with('success', 'Inicio de sesión exitoso');
         }
 
         // Si las credenciales no coinciden, redirigir a la página de inicio de sesión con un mensaje de error
